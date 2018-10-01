@@ -1,0 +1,47 @@
+/*
+This document should be used to modificate the style
+of the project
+*/
+
+//upload fonts Bodoni and Futura
+@font-face {
+    font-family: 'futura';
+    src: url(../fonts/futura.otf)
+}
+@font-face {
+    font-family: 'bodoni';
+    src: url(../fonts/BodoniMT.ttf)
+}
+
+//variables
+$bgBox_color: black;
+$lnBox_color: white;
+$logo: '../img/logo.png';
+$fontB: 'bodoni';
+$fontF: 'futura';
+$fbLogo: '../img';  //add full path
+$instLogo: '../img'; //add full path
+$xLogo: ''; //add full path
+$backLogo: ''; //add full path
+$menuLogo: ''; //add full path
+$searchLogo: ''; //add full path
+$playLogo: ''; //add full path
+$shareLogo: ''; //add full path
+
+* {
+    box-sizing: border-box;
+}
+
+grid-container{
+    display: grid;
+    background-color: bgBox_color;
+    align-content: center;
+    grid-template-columns: 25%;
+    grid-auto-flow: 50%;
+}
+
+grid-
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
