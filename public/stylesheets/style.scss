@@ -6,8 +6,17 @@ of the project
 //variables
 $bgBox_color: black;
 $lnBox_color: white;
-//$logo: ../img/logo;
+$logo: '../img/logo.png';
+
+* {
+    box-sizing: border-box;
+}
 
 grid-container{
     display: grid;
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
