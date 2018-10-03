@@ -16,9 +16,10 @@ of the project
 //variables
 $bgBox_color: black;
 $lnBox_color: white;
+$color_text: white;
 $logo: '../img/logo.png';
-$fontB: 'bodoni';
-$fontF: 'futura';
+$fontB: bodoni;
+$fontF: futura;
 $fbLogo: '../img';  //add full path
 $instLogo: '../img'; //add full path
 $xLogo: ''; //add full path
@@ -29,19 +30,25 @@ $playLogo: ''; //add full path
 $shareLogo: ''; //add full path
 
 * {
-    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-grid-container{
-    display: grid;
-    background-color: bgBox_color;
-    align-content: center;
-    grid-template-columns: 25%;
-    grid-auto-flow: 50%;
-}
+.grid-container {
+    display: grid; 
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+  }
+  
+ .grid-item {
+    background-color: $bgBox_color;
+    color: $color_text;
+    border: 1px solid $lnBox_color;
+  }
 
-grid-
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
 
 } 
