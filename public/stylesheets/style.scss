@@ -13,21 +13,21 @@ of the project
     src: url(../fonts/BodoniMT.ttf)
 }
 
+@supports (display: grid){
+    //undo the basic layout for
+    //non-grid-supporting browsers
+
+
+}
+
 //variables
 $bgBox_color: black;
-$lnBox_color: white;
+$mouse_over: rgb(26, 26, 26);
 $color_text: white;
-$logo: '../img/logo.png';
+$gap_box: 1px;
 $fontB: bodoni;
 $fontF: futura;
-$fbLogo: '../img';  //add full path
-$instLogo: '../img'; //add full path
-$xLogo: ''; //add full path
-$backLogo: ''; //add full path
-$menuLogo: ''; //add full path
-$searchLogo: ''; //add full path
-$playLogo: ''; //add full path
-$shareLogo: ''; //add full path
+
 
 * {
     width: 100%;
@@ -38,17 +38,59 @@ $shareLogo: ''; //add full path
 
 .grid-container {
     display: grid; 
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: $gap_box;
+    grid-auto-rows: 50%;
   }
   
- .grid-item {
+ .grid-item, a{
+    display: flex;
     background-color: $bgBox_color;
     color: $color_text;
-    border: 1px solid $lnBox_color;
+    align-items: center;
+    justify-content: center;
   }
 
+.grid-item-special, p {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    display: flex;
+    background-color: $bgBox_color;
+    color: $color_text;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item:hover, a:hover{
+    background-color: $mouse_over;
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+a{
+    font-family: $fontF;
+    font-size: 18px;
+    color: $color_text;
+    text-decoration: none;
+    
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+
+    .grid-container {
+        display: grid; 
+        grid-template-columns: repeat(2, 50%);
+        grid-gap: $gap_box;
+        grid-auto-rows: 25%;
+      }
 
 } 
