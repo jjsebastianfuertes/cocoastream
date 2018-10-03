@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .grid-container
+      .grid-item
+        a(href="./index" )
+          img(src="./img/logo.svg" alt="cocoa stream" style='width:139px; height:70px;') 
+      .grid-item
+        a(href="./index" )
+          img(src="./img/back.svg" alt="regresa" style='width:50px; height:35px;')
+      .grid-item
+        a(href="./nosotros") NOSOTROS
+      .grid-item
+        a(href="./index" )
+          img(src="./img/menu.svg" alt="regresa" style='width:60px; height:34px;')
+      .grid-item
+      .grid-item
+      .grid-item-special
+        p Somos una comunidad de artistas, comunicadores, educadores y profesionales de medios, que dentro de un ambiente interdisciplinario,
+            | estamos dedicados a formar a los futuros líderes en las áreas
+            | de comunicación, diseño creativo y producción audiovisual,
+            | y arte contemporáneo.                    
+    block content
