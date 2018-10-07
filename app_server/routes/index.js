@@ -20,5 +20,8 @@ router.get('/animacion', ctrlMain.animacion);
 //tv pages
 router.get('/tv', ctrlMain.tvProduccion);
 
+//menu pages
+router.get('/menu', ctrlMain.menu);
+
 
 module.exports = router;
