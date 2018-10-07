@@ -28,6 +28,19 @@ $gap_box: 1px;
 $fontB: bodoni;
 $fontF: futura;
 
+//content within all grid-item
+%item {
+    display: flex;
+    background-color: $bgBox_color;
+    color: $color_text;
+    align-items: center;
+    justify-content: center;
+
+    font-family: $fontF;
+    font-size: 18pt;
+    color: $color_text;
+    text-decoration: none;
+    }
 
 * {
     width: 100%;
@@ -35,49 +48,212 @@ $fontF: futura;
     margin: 0;
     padding: 0;
 }
+.grid-item, a{
+    display: flex;
+    background-color: $bgBox_color;
+    color: $color_text;
+    align-items: center;
+    justify-content: center;
+ }
+
+.textContCoor{
+    font-size: 18px;
+}
+.grid-item-contactos-pc, .textContCarr, .textContInfo, .textContCoor{
+    display: flex;
+    background-color: $bgBox_color;
+    color: $color_text;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item-contactos-mobile{
+    display: none;
+}
+
+.textContCarr{
+    font-size:20px;
+    font-family: $fontB;
+}
+.grid-item-texto{
+    display: flex;
+    background-color: $bgBox_color;
+    color: $color_text;
+    align-items: center;
+    justify-content: center;
+}
+.textContInfo{
+    font-size: 16px; 
+    width: 280px; 
+    height:130px; 
+    text-align:center;
+    font-family: $fontF;
+}
+
+.grid-item-button{
+    background-color: $bgBox_color;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    background-color: #FAAB22;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    width: 135px;
+    height: 40px;
+    text-align: justify
+}
+
 
 .grid-container {
     display: grid; 
     grid-template-columns: repeat(4, 25%);
     grid-gap: $gap_box;
     grid-auto-rows: 50%;
-  }
-  
- .grid-item, a{
-    display: flex;
-    background-color: $bgBox_color;
-    color: $color_text;
-    align-items: center;
-    justify-content: center;
-  }
+    }
 
-.grid-item-special, p {
-    grid-column: 2 / 4;
-    grid-row: 2;
-    display: flex;
-    background-color: $bgBox_color;
-    color: $color_text;
-    align-items: center;
-    justify-content: center;
-}
+// all grid item for desktop 
+    //logo box
+    .grid-item-logo, a{
+     @extend %item;
+        grid-column: 1/2 ;
+        grid-row: 1;
+    }
+
+    //back box
+    .grid-item-back, a{
+        @extend %item;
+           grid-column: 2/3 ;
+           grid-row: 1;
+       }
+
+    //category box
+    .grid-item-category, a{
+        @extend %item;
+           grid-column: 2/3 ;
+           grid-row: 1;
+       }
+    
+    //filter box
+    .grid-item-filter, a{
+        @extend %item;
+           grid-column: 3/4 ;
+           grid-row: 1;
+       }
+
+     //menu box
+     .grid-item-menu, a{
+        @extend %item;
+           grid-column: 4/5 ;
+           grid-row: 1;
+       }
+
+     //search box
+     .grid-item-search, a{
+        @extend %item;
+           grid-column: 4/5 ;
+           grid-row: 2;
+       }
+    
+    //nosotros box
+    .grid-item-nosotros, a{
+    @extend %item;
+        grid-column: 2/3 ;
+        grid-row: 1;
+    }
+    
+    //contactanos box
+    .grid-item-contactanos, a{
+    @extend %item;
+        grid-column: 3/4 ;
+        grid-row: 1;
+    }
+
+    //X box
+    .grid-item-x, a{
+        @extend %item;
+            grid-column: 4/5 ;
+            grid-row: 1;
+        }
+    
+    //cine box
+    .grid-item-cine, a{
+        @extend %item;
+            grid-column: 1/2 ;
+            grid-row: 2;
+        }
+    
+    //animacion box
+    .grid-item-anim, a{
+        @extend %item;
+            grid-column: 2/3 ;
+            grid-row: 2;
+        }
+    
+    //tv box
+    .grid-item-tv, a{
+        @extend %item;
+            grid-column: 3/4 ;
+            grid-row: 2;
+        }
+    
+    //textNosotros box
+    .grid-item-textNosotros {
+        @extend %item;
+            grid-column: 2/4 ;
+            grid-row: 2;
+            font-size: 18px;
+            text-align: center;
+            position: relative;
+        }
+ 
+    .grid-item-nosotros-p
+    {
+        position: absolute; 
+        top: 60px;
+    }
+ //grid for all the content implement by admins       
+
 
 .grid-item:hover, a:hover{
     background-color: $mouse_over;
 }
 
-input[type=text] {
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+
+//ids for desktop
+#cocoasLogo{
+    width:139px; 
+    height:70px;
+}
+#searchLogo{
+    width:40px;
 }
 
-a{
-    font-family: $fontF;
-    font-size: 18px;
-    color: $color_text;
-    text-decoration: none;
-    
+#xLogo{
+    width:40px;
 }
+
+#menuLogo{
+    width:35px;
+    height:18px;
+}
+
+#backLogo{
+    width:50px;
+    height:36px;
+}
+
+
+
+
+
+
+
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
@@ -86,6 +262,64 @@ input[type=text]:focus {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media (max-width: 768px) {
 
+    .grid-item-contactos-mobile{
+        display: flex;
+        position:relative;
+        background-color: $bgBox_color;
+        color: $color_text;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-item-contactos-pc{
+        display: none;
+    }
+    .textContCarr{
+        font-size:12px;
+        font-family: $fontB;
+    }
+
+   .grid-item-contactos-mobile > .textContMobInfo{
+        position:absolute; 
+        bottom: 0; 
+        left: 5px; 
+        font-size:8px; 
+        height: 10px; 
+        width:110px;
+    }
+
+    .grid-item-contactos-mobile >  .textContMobInfoCoor{
+        position: absolute;
+        font-size:10px; 
+        height: 20px; 
+        left: 30px;
+    }
+    .textContInfo{
+        font-size: 8px; 
+        width: 140px; 
+        height: 90px; 
+        text-align:center;
+        font-family: $fontF;
+    }
+    
+    .grid-item-button{
+        background-color: $bgBox_color;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .button{
+        display: flex;
+        background-color: #FAAB22;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 10px;
+        border: none;
+        cursor: pointer;
+        width: 80px;
+        height: 20px; 
+    }
+
+
     .grid-container {
         display: grid; 
         grid-template-columns: repeat(2, 50%);
@@ -93,4 +327,133 @@ input[type=text]:focus {
         grid-auto-rows: 25%;
       }
 
+    // all grid item for mobile
+    %item {
+        font-size: 12px;
+        }
+        //back box
+        .grid-item-back, a{
+            @extend %item;
+               grid-column: 1/2 ;
+               grid-row: 2;
+           }
+    
+        //category box
+        .grid-item-category, a{
+            @extend %item;
+               grid-column: 1/2 ;
+               grid-row: 2;
+           }
+
+        //filter box
+        .grid-item-filter, a{
+            @extend %item;
+               grid-column: 2/3 ;
+               grid-row: 2;
+           }
+    
+         //menu box
+         .grid-item-menu, a{
+            @extend %item;
+               grid-column: 2/3 ;
+               grid-row: 1;
+           }
+    
+         //search box
+         .grid-item-search, a{
+            @extend %item;
+               grid-column: 2/3 ;
+               grid-row: 4;
+           }
+        
+        //nosotros box
+        .grid-item-nosotros, a{
+        @extend %item;
+            grid-column: 2/3 ;
+            grid-row: 2;
+        }
+        
+        //contactanos box
+        .grid-item-contactanos, a{
+        @extend %item;
+            grid-column: 2/3 ;
+            grid-row: 3;
+        }
+    
+        //X box
+        .grid-item-x, a{
+            @extend %item;
+                grid-column: 2/3 ;
+                grid-row: 1;
+            }
+        
+        //animacion box
+        .grid-item-anim, a{
+            @extend %item;
+                grid-column: 1/2 ;
+                grid-row: 3;
+            }
+        
+        //tv box
+        .grid-item-tv, a{
+            @extend %item;
+                grid-column: 1/2 ;
+                grid-row: 4;
+            }
+        
+          //textNosotros box
+        .grid-item-textNosotros {
+            @extend %item;
+                grid-column: 1/3 ;
+                grid-row: 3;
+                font-size: 10px;
+                text-align: center;
+                position: relative;
+            }
+     //grid for all the content implement by admins       
+     .grid-item, a{
+        display: flex;
+        background-color: $bgBox_color;
+        color: $color_text;
+        align-items: center;
+        justify-content: center;
+      }
+    .grid-item-nosotros-p
+    {
+        position: absolute; 
+        top: 30px;
+    }
+
+    //ids
+
+    #cocoasLogo{
+        width:70px; 
+        height:27px;
+    }
+
+    #xLogo{
+        width:30px;
+    }
+
+    #searchLogo{
+        width:30px;
+    }
+
+    #menuLogo{
+        width:35px;
+        height:15px;
+    }
+
+    #backLogo{
+        width:30px;
+        height:19px;
+    }
+
+    #rightLogo{
+        position:absolute;
+        right: 15px;
+        bottom: 45%;
+        width: 10px;
+        height: 20px;
+    }
 } 
