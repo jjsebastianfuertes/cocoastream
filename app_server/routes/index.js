@@ -23,5 +23,8 @@ router.get('/tv', ctrlMain.tvProduccion);
 //menu pages
 router.get('/menu', ctrlMain.menu);
 
+//admin pages
+router.get('/admin', ctrlMain.admin);
+
 
 module.exports = router;
