@@ -27,3 +27,13 @@ module.exports.animacion = (req, res) => {
 module.exports.tvProduccion = (req, res) => {
   res.render('tv', {title: 'T.V. Producción'})
 }
+
+//menu page
+module.exports.menu = (req, res) => {
+  res.render('menu')
+}
+
+//admin page
+module.exports.admin = (req, res) => {
+  res.render('admin')
+}

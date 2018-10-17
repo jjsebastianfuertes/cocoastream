@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    .grid-item-logo
+        a(href="./" )
+            img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream") 
+    .grid-item
+    .grid-item
+    .grid-item-menu
+        a(href="./menu" )
+            img(id='menuLogo' src="./img/menu.svg" alt="menu")
+    .grid-item
+        p add scroll down
+    .grid-item
+    .grid-item
+    .grid-item-filter(style='grid-column:4/5; grid-row:2;')
+        p add interaction
