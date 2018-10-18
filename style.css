@@ -27,10 +27,7 @@ of the project
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-*::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
 }
 
 .grid-item, a {

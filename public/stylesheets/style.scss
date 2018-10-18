@@ -48,6 +48,10 @@ $fontF: futura;
     margin: 0;
     padding: 0;
 }
+
+*::-webkit-scrollbar { 
+    display: none; 
+}
 .grid-item, a{
     display: flex;
     background-color: $bgBox_color;
