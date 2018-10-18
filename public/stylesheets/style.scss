@@ -48,8 +48,8 @@ $fontF: futura;
     margin: 0;
     padding: 0;
 }
-
-*::-webkit-scrollbar { 
+//Hides scroll
+body::-webkit-scrollbar { 
     display: none; 
 }
 .grid-item, a{
