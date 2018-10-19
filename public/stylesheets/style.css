@@ -51,6 +51,9 @@ of the project
   grid-column: 1/5;
   grid-row: 2/4;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 .grid-item, a {
   display: flex;

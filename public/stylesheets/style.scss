@@ -67,6 +67,9 @@ $fontF: futura;
     justify-self: stretch;
     grid-column: 1/5 ;
     grid-row: 2/4;
+//Hides scroll
+body::-webkit-scrollbar { 
+    display: none; 
 }
 .grid-item, a{
     display: flex;
