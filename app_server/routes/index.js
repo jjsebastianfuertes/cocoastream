@@ -29,5 +29,8 @@ router.get('/admin', ctrlMain.admin);
 //Perfil admin pages
 router.get('/perfiladmin', ctrlMain.perfiladmin);
 
+//editor admin pages
+router.get('/editoradmin', ctrlMain.editoradmin);
+
 
 module.exports = router;

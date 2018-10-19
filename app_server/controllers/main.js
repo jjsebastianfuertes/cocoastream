@@ -42,3 +42,8 @@ module.exports.admin = (req, res) => {
 module.exports.perfiladmin = (req, res) => {
   res.render('perfiladmin')
 }
+
+//editor admin page
+module.exports.editoradmin = (req, res) => {
+  res.render('editoradmin')
+}
