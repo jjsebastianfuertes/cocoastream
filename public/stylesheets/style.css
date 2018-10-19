@@ -30,6 +30,7 @@ of the project
 }
 
 .grid-icono {
+  background-color: black;
   align-items: center;
   justify-content: center;
   grid-column: 2/4;
