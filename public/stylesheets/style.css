@@ -479,6 +479,12 @@ input[type=text]:focus {
     top: 30px;
   }
 
+  .center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
   #cocoasLogo {
     width: 70px;
     height: 27px;
