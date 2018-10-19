@@ -40,6 +40,7 @@ module.exports.admin = (req, res) => {
 //leonardo page ... borrar despues de presentacion
 module.exports.leonardo = (req, res) => {
   res.render('leonardo')
+}
 
 //perfil admin page
 module.exports.perfiladmin = (req, res) => {
@@ -49,5 +50,4 @@ module.exports.perfiladmin = (req, res) => {
 //editor admin page
 module.exports.editoradmin = (req, res) => {
   res.render('editoradmin')
-}
 }

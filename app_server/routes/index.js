@@ -26,16 +26,13 @@ router.get('/menu', ctrlMain.menu);
 //admin pages
 router.get('/admin', ctrlMain.admin);
 
-<<<<<<< HEAD
 //leonardo pages  ... borrar luego de presentacion
 router.get('/leonardo', ctrlMain.leonardo);
-=======
 //Perfil admin pages
 router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 
 //editor admin pages
 router.get('/editoradmin', ctrlMain.editoradmin);
->>>>>>> xavier
 
 
 module.exports = router;
