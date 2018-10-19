@@ -33,7 +33,6 @@ $fontF: futura;
     color: $color_text;
     align-items: center;
     justify-content: center;
-
     font-family: $fontF;
     font-size: 18pt;
     color: $color_text;
@@ -46,6 +45,31 @@ $fontF: futura;
     margin: 0;
     padding: 0;
 }
+
+.grid-icono{
+    background-color: $bgBox_color;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2/4 ;
+    grid-row: 1/3;
+
+}
+.grid-play{
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/2 ;
+    grid-row: 2;
+    width: 40px;
+    height: 40px;
+}
+.grid-video{
+    justify-self: stretch;
+    grid-column: 1/5 ;
+    grid-row: 2/4;
+//Hides scroll
+body::-webkit-scrollbar { 
+    display: none; 
+}
 .grid-item, a{
     display: flex;
     background-color: $bgBox_color;
@@ -53,6 +77,15 @@ $fontF: futura;
     align-items: center;
     justify-content: center;
  }
+
+
+
+.grid-contMult{
+    background-color: $bgBox_color;
+    color: $color_text;
+    justify-self: stretch;
+}
+
 
 .textContCoor{
     font-size: 18px;
@@ -136,7 +169,17 @@ $fontF: futura;
            grid-column: 2/3 ;
            grid-row: 1;
        }
-    
+       .grid-item-return, a{
+        @extend %item;
+            grid-column: 4/5 ;
+            grid-row: 5; 
+    }
+
+    .grid-item-share, a{
+        @extend %item;
+            grid-column: 3/4 ;
+            grid-row: 5; 
+    }
     //filter box
     .grid-item-filter, a{
         @extend %item;
@@ -150,7 +193,7 @@ $fontF: futura;
            grid-column: 4/5 ;
            grid-row: 1;
        }
-
+    
      //search box
      .grid-item-search{
         @extend %item;
@@ -160,10 +203,22 @@ $fontF: futura;
            transition: width 2s;
        }
     
+       .grid-item-icono{
+        @extend %item;
+            background-color: $bgBox_color;
+            justify-content: center;
+            align-content: center;
+            grid-column: 2/4 ;
+            grid-row: 1/3;
+        
+    }
+/*
     .grid-item-search::after {
         content: attr(href);
         width: 500px;
     }
+
+   */ 
     //nosotros box
     .grid-item-nosotros, a{
     @extend %item;
@@ -221,6 +276,22 @@ $fontF: futura;
         position: absolute; 
         top: 60px;
     }
+
+    //textvideo box
+    .grid-item-textVideo {
+        @extend %item;
+            grid-column: 2/4 ;
+            grid-row: 4;
+            font-size: 18px;
+            text-align: center;
+            position: relative;
+        }
+ 
+    .grid-item-video-p
+    {
+        position: absolute; 
+        top: 60px;
+    }
  //grid for all the content implement by admins       
 
 
@@ -243,8 +314,8 @@ $fontF: futura;
 }
 
 #menuLogo{
-    width:35px;
-    height:18px;
+    width:45px;
+    height:28px;
 }
 
 #backLogo{
@@ -252,20 +323,52 @@ $fontF: futura;
     height:36px;
 }
 
+#instagramLogo{
+    width:50px;
+    height:36px; 
+}
 
+#fbLogo{
+    width:50px;
+    height:36px;
+}
 
+#rightLogo{
+    right: 15px;
+    bottom: 45%;
+    width: 30px;
+    height: 60px;
+}
 
+#iconos{
+    width: 60px;
+}
+#iconos2{
+    width: 25px;
+}
 
+#iconoName{
+    width: 250px;
+}
 
+#iconoLema{
+    width: 150px;
+}
 
-
+#cineIcono{
+    width: 500px;
+    grid-column: 2/4 ;
+    grid-row: 1/2;
+}
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 100%;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media (max-width: 768px) {
-
+@media screen and (max-width: 768px) {
+    .grid-item{
+        
+      }
     .grid-item-contactos-mobile{
         display: flex;
         position:relative;
@@ -372,11 +475,24 @@ input[type=text]:focus {
         
         //nosotros box
         .grid-item-nosotros, a{
-        @extend %item;
-            grid-column: 2/3 ;
-            grid-row: 2;
+            @extend %item;
+                grid-column: 2/3 ;
+                grid-row: 2;
         }
         
+        .grid-item-return, a{
+            @extend %item;
+                grid-column: 1/2 ;
+                grid-row: 6; 
+        }
+
+        .grid-item-share, a{
+            @extend %item;
+                grid-column: 2/3 ;
+                grid-row: 6; 
+        }
+
+    
         //contactanos box
         .grid-item-contactanos, a{
         @extend %item;
@@ -414,6 +530,18 @@ input[type=text]:focus {
                 text-align: center;
                 position: relative;
             }
+
+        //textvideo box
+    .grid-item-textVideo {
+        @extend %item;
+            grid-column: 1/3 ;
+            grid-row: 5;
+            font-size: 10px;
+            text-align: center;
+            position: relative;
+        }
+ 
+
      //grid for all the content implement by admins       
      .grid-item, a{
         display: flex;
@@ -460,4 +588,27 @@ input[type=text]:focus {
         width: 10px;
         height: 20px;
     }
-} 
+
+    #iconos{
+        width: 40px;
+    }
+
+    #iconos2{
+        width: 15px;
+    }
+    
+    
+    #iconoName{
+        width: 150px;
+    }
+    
+    #iconoLema{
+        width: 80px;
+    }
+    
+    #cineIcono{
+        width: 500px;
+        grid-column: 2/4 ;
+        grid-row: 1/2;
+    } 
+}

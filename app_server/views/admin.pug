@@ -5,23 +5,29 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   body
-    .padder
+    .container.padder
       br
       br
-      img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream" class="grid-item")
+      .text-center
+        img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream" class="grid-item")
       .form-inline
       //.text-md-right
       br
-      .text-center
+      .text-center.form-group
           p Administrador   
-      .form-group
-      .centro.text-center
-        <label for="exampleInputEmail1">Dirección Email</label>
-      .centro.text-center
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email">
-        <small id="emailHelp" class="form-text text-muted">Cocoa Stream no compartirá tu Email con nadie más.</small>
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-        br
-        <button type="submit" class="btn btn-primary">Entrar</button>
-
+          form(action="/admin/perfiladmin", method="get")
+            .row
+              .col-lg-3.col-lg-offset-5.col-md-3.col-md-offset-5.col-sm-12.col-xs-12
+                label(for='exampleInputEmail1') Dirección Email
+              .col-lg-3.col-lg-offset-5.col-md-3.col-md-offset-5.col-sm-12.col-xs-12
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Ingresa tu email')
+                small#emailHelp.form-text.text-muted Cocoa Stream no compartirá tu Email con nadie más.
+            .row
+              .col-lg-3.col-lg-offset-5.col-md-3.col-md-offset-5.col-sm-12.col-xs-12
+                label(for='exampleInputPassword1') Contraseña
+              .col-lg-3.col-lg-offset-5.col-md-3.col-sm-12.col-xs-12
+                input#exampleInputPassword1.form-control(type='password', placeholder='Contraseña')
+            br
+            .row
+              .col-lg-3.col-lg-offset-5.col-md-3.col-md-offset-5.col-sm-12.col-xs-12
+                button.btn.btn-primary(type='submit') Entrar
