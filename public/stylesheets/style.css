@@ -10,7 +10,7 @@ of the project
   font-family: "bodoni";
   src: url(../fonts/BodoniMT.ttf);
 }
-.grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-search, .grid-item-menu, .grid-item-filter, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
+.grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-icono, .grid-item-search, .grid-item-menu, .grid-item-filter, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
   display: flex;
   background-color: black;
   color: white;
@@ -27,13 +27,6 @@ of the project
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-.grid-icono {
-  align-items: center;
-  justify-content: center;
-  grid-column: 2/4;
-  grid-row: 1/3;
 }
 
 .grid-play {
@@ -170,11 +163,21 @@ of the project
   transition: width 2s;
 }
 
-.grid-item-search::after {
-  content: attr(href);
-  width: 500px;
+.grid-item-icono {
+  background-color: black;
+  justify-content: center;
+  align-content: center;
+  grid-column: 2/4;
+  grid-row: 1/3;
 }
 
+/*
+    .grid-item-search::after {
+        content: attr(href);
+        width: 500px;
+    }
+
+   */
 .grid-item-nosotros, a {
   grid-column: 2/3;
   grid-row: 1;
@@ -249,8 +252,8 @@ of the project
 }
 
 #menuLogo {
-  width: 35px;
-  height: 18px;
+  width: 45px;
+  height: 28px;
 }
 
 #backLogo {
@@ -277,6 +280,10 @@ of the project
 
 #iconos {
   width: 60px;
+}
+
+#iconos2 {
+  width: 25px;
 }
 
 #iconoName {
@@ -368,7 +375,7 @@ input[type=text]:focus {
     grid-auto-rows: 25%;
   }
 
-  .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-return, .grid-item-share, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros, .grid-item-textVideo {
+  .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-return, .grid-item-share, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-icono, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros, .grid-item-textVideo {
     font-size: 12px;
   }
 
@@ -490,6 +497,24 @@ input[type=text]:focus {
     bottom: 45%;
     width: 10px;
     height: 20px;
+  }
+
+  #iconos {
+    width: 40px;
+  }
+
+  #iconoName {
+    width: 150px;
+  }
+
+  #iconoLema {
+    width: 80px;
+  }
+
+  #cineIcono {
+    width: 500px;
+    grid-column: 2/4;
+    grid-row: 1/2;
   }
 }
 
