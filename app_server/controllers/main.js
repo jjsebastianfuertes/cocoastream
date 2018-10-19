@@ -37,3 +37,7 @@ module.exports.menu = (req, res) => {
 module.exports.admin = (req, res) => {
   res.render('admin')
 }
+//leonardo page ... borrar despues de presentacion
+module.exports.leonardo = (req, res) => {
+  res.render('leonardo')
+}
