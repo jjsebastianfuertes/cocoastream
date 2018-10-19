@@ -32,3 +32,12 @@ module.exports.tvProduccion = (req, res) => {
 module.exports.menu = (req, res) => {
   res.render('menu')
 }
+
+//admin page
+module.exports.admin = (req, res) => {
+  res.render('admin')
+}
+//leonardo page ... borrar despues de presentacion
+module.exports.leonardo = (req, res) => {
+  res.render('leonardo')
+}

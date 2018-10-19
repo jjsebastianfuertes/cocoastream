@@ -23,5 +23,11 @@ router.get('/tv', ctrlMain.tvProduccion);
 //menu pages
 router.get('/menu', ctrlMain.menu);
 
+//admin pages
+router.get('/admin', ctrlMain.admin);
+
+//leonardo pages  ... borrar luego de presentacion
+router.get('/leonardo', ctrlMain.leonardo);
+
 
 module.exports = router;

@@ -10,7 +10,7 @@ of the project
   font-family: "bodoni";
   src: url(../fonts/BodoniMT.ttf);
 }
-.grid-item-textNosotros, .grid-item-tv, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-search, .grid-item-menu, .grid-item-filter, .grid-item-category, .grid-item-back, .grid-item-logo, a {
+.grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-search, .grid-item-menu, .grid-item-filter, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
   display: flex;
   background-color: black;
   color: white;
@@ -29,12 +29,40 @@ of the project
   padding: 0;
 }
 
+.grid-icono {
+  align-items: center;
+  justify-content: center;
+  grid-column: 2/4;
+  grid-row: 1/3;
+}
+
+.grid-play {
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/2;
+  grid-row: 2;
+  width: 40px;
+  height: 40px;
+}
+
+.grid-video {
+  justify-self: stretch;
+  grid-column: 1/5;
+  grid-row: 2/4;
+}
+
 .grid-item, a {
   display: flex;
   background-color: black;
   color: white;
   align-items: center;
   justify-content: center;
+}
+
+.grid-contMult {
+  background-color: black;
+  color: white;
+  justify-self: stretch;
 }
 
 .textContCoor {
@@ -115,6 +143,16 @@ of the project
   grid-row: 1;
 }
 
+.grid-item-return, a {
+  grid-column: 4/5;
+  grid-row: 5;
+}
+
+.grid-item-share, a {
+  grid-column: 3/4;
+  grid-row: 5;
+}
+
 .grid-item-filter, a {
   grid-column: 3/4;
   grid-row: 1;
@@ -125,9 +163,16 @@ of the project
   grid-row: 1;
 }
 
-.grid-item-search, a {
+.grid-item-search {
   grid-column: 4/5;
   grid-row: 2;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+.grid-item-search::after {
+  content: attr(href);
+  width: 500px;
 }
 
 .grid-item-nosotros, a {
@@ -173,6 +218,19 @@ of the project
   top: 60px;
 }
 
+.grid-item-textVideo {
+  grid-column: 2/4;
+  grid-row: 4;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+}
+
+.grid-item-video-p {
+  position: absolute;
+  top: 60px;
+}
+
 .grid-item:hover, a:hover {
   background-color: #1a1a1a;
 }
@@ -200,13 +258,48 @@ of the project
   height: 36px;
 }
 
+#instagramLogo {
+  width: 50px;
+  height: 36px;
+}
+
+#fbLogo {
+  width: 50px;
+  height: 36px;
+}
+
+#rightLogo {
+  right: 15px;
+  bottom: 45%;
+  width: 30px;
+  height: 60px;
+}
+
+#iconos {
+  width: 60px;
+}
+
+#iconoName {
+  width: 250px;
+}
+
+#iconoLema {
+  width: 150px;
+}
+
+#cineIcono {
+  width: 500px;
+  grid-column: 2/4;
+  grid-row: 1/2;
+}
+
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
   width: 100%;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .grid-item-contactos-mobile {
     display: flex;
     position: relative;
@@ -275,7 +368,7 @@ input[type=text]:focus {
     grid-auto-rows: 25%;
   }
 
-  .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros {
+  .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-return, .grid-item-share, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros, .grid-item-textVideo {
     font-size: 12px;
   }
 
@@ -309,6 +402,16 @@ input[type=text]:focus {
     grid-row: 2;
   }
 
+  .grid-item-return, a {
+    grid-column: 1/2;
+    grid-row: 6;
+  }
+
+  .grid-item-share, a {
+    grid-column: 2/3;
+    grid-row: 6;
+  }
+
   .grid-item-contactanos, a {
     grid-column: 2/3;
     grid-row: 3;
@@ -332,6 +435,14 @@ input[type=text]:focus {
   .grid-item-textNosotros {
     grid-column: 1/3;
     grid-row: 3;
+    font-size: 10px;
+    text-align: center;
+    position: relative;
+  }
+
+  .grid-item-textVideo {
+    grid-column: 1/3;
+    grid-row: 5;
     font-size: 10px;
     text-align: center;
     position: relative;
