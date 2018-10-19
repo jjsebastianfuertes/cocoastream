@@ -26,5 +26,8 @@ router.get('/menu', ctrlMain.menu);
 //admin pages
 router.get('/admin', ctrlMain.admin);
 
+//Perfil admin pages
+router.get('/perfiladmin', ctrlMain.perfiladmin);
+
 
 module.exports = router;

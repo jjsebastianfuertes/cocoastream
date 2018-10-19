@@ -37,3 +37,8 @@ module.exports.menu = (req, res) => {
 module.exports.admin = (req, res) => {
   res.render('admin')
 }
+
+//perfil admin page
+module.exports.perfiladmin = (req, res) => {
+  res.render('perfiladmin')
+}

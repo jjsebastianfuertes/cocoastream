@@ -5,3 +5,23 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   body
+    .padder
+      br
+      br
+      img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream" class="grid-item")
+      .form-inline
+      //.text-md-right
+      br
+      .text-center
+          p Administrador   
+      .form-group
+      .centro.text-center
+        <label for="exampleInputEmail1">Dirección Email</label>
+      .centro.text-center
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email">
+        <small id="emailHelp" class="form-text text-muted">Cocoa Stream no compartirá tu Email con nadie más.</small>
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+        br
+        <button type="submit" class="btn btn-primary">Entrar</button>
+
