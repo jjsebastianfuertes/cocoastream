@@ -27,7 +27,7 @@ router.get('/menu', ctrlMain.menu);
 router.get('/admin', ctrlMain.admin);
 
 //Perfil admin pages
-router.get('/perfiladmin', ctrlMain.perfiladmin);
+router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 
 //editor admin pages
 router.get('/editoradmin', ctrlMain.editoradmin);
