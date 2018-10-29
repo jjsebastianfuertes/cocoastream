@@ -4,8 +4,7 @@ mostrarCat(catIndex);
 
 // Controlador
 function cambiarCat(n) {
-  //let temp = catIndex + n;
-  //console.log(temp);
+  
   mostrarCat(catIndex += n);
 }
 //Cambia entre categorías
