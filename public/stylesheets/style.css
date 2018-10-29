@@ -23,7 +23,6 @@ of the project
 }
 
 * {
-  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -51,6 +50,7 @@ of the project
   grid-column: 1/5;
   grid-row: 2/4;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -245,7 +245,7 @@ body::-webkit-scrollbar {
   top: 60px;
 }
 
-.grid-item:hover, a:hover {
+.grid-item:hover, a:hover, #iconoLema:hover {
   background-color: #1a1a1a;
 }
 
@@ -305,7 +305,7 @@ body::-webkit-scrollbar {
   width: 150px;
 }
 
-#cineIcono {
+#cineIcono, #tvIcono, #animacionIcono {
   width: 500px;
   grid-column: 2/4;
   grid-row: 1/2;
@@ -479,12 +479,6 @@ input[type=text]:focus {
     top: 30px;
   }
 
-  .center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-
   #cocoasLogo {
     width: 70px;
     height: 27px;
@@ -520,6 +514,10 @@ input[type=text]:focus {
     width: 40px;
   }
 
+  #iconos2 {
+    width: 15px;
+  }
+
   #iconoName {
     width: 150px;
   }
@@ -528,7 +526,7 @@ input[type=text]:focus {
     width: 80px;
   }
 
-  #cineIcono {
+  #cineIcono, #tvIcono, #animacionIcono {
     width: 500px;
     grid-column: 2/4;
     grid-row: 1/2;

@@ -9,8 +9,17 @@ block content
         a(href="./menu" )
             img(id='menuLogo' src="./img/menu.svg" alt="menu")
     .grid-item-filter(style='grid-column:4/5; grid-row:2;')
-        img(id='iconos' src="./img/up.svg" alt="arriba")
-        a(href='./cine' style="width: 80px;") CINE
-        img(id='iconos' src="./img/down.svg" alt="abajo")
+        img(id='iconos' src="./img/up.svg" alt="arriba" onClick='cambiarCat(-1)')
+        .catName
+            a(href='./cine' style="width: 80px;") CINE
+        img(id='iconos' src="./img/down.svg" alt="abajo" onClick='cambiarCat(1)')
     .grid-item-icono
-        img(id='cineIcono' src="./img/cineIcono.svg" alt="cine")
+        .categoria
+            img(id='cineIcono' src="./img/cineIcono.svg" alt="cine")
+        .categoria
+            img(id="tvIcono" alt="tv" src="./img/tvIcono.svg")
+        .categoria
+            img(id="animacionIcono" src="./img/animacionIcono.svg" alt="animacion")
+    script
+        include ../../public/javascripts/slider.js
+    
