@@ -14,7 +14,8 @@ html
         br
         p Nombre Administrador
       .text-right.botones-perfil
-        button.btn.btn-primary(type='button') Subir Video
+        form(action="/admin/editoradmin")
+          button.btn.btn-primary(type='submit') Subir Video
         button.btn.btn-secondary(type='button') Salir
       .text-center
         p Mis Videos

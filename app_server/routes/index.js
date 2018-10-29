@@ -32,7 +32,7 @@ router.get('/leonardo', ctrlMain.leonardo);
 router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 
 //editor admin pages
-router.get('/editoradmin', ctrlMain.editoradmin);
+router.get('/admin/editoradmin', ctrlMain.editoradmin);
 
 
 module.exports = router;
