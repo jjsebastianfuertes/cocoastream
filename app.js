@@ -5,7 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
 //var indexRouter = require('./app_server/routes/index');
 //var usersRouter = require('./app_server/routes/users');
