@@ -245,7 +245,7 @@ body::-webkit-scrollbar {
   top: 60px;
 }
 
-.grid-item:hover, a:hover, #iconoLema:hover {
+.grid-item:hover, a:hover, #iconos:hover {
   background-color: #1a1a1a;
 }
 
@@ -291,6 +291,7 @@ body::-webkit-scrollbar {
 
 #iconos {
   width: 60px;
+  cursor: pointer;
 }
 
 #iconos2 {
@@ -512,6 +513,7 @@ input[type=text]:focus {
 
   #iconos {
     width: 40px;
+    cursor: pointer;
   }
 
   #iconos2 {

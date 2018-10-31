@@ -296,7 +296,7 @@ body::-webkit-scrollbar {
  //grid for all the content implement by admins       
 
 
-.grid-item:hover, a:hover, #iconoLema:hover{
+.grid-item:hover, a:hover, #iconos:hover{
     background-color: $mouse_over;
 }
 
@@ -347,6 +347,7 @@ body::-webkit-scrollbar {
 
 #iconos{
     width: 60px;
+    cursor: pointer;
 }
 #iconos2{
     width: 25px;
@@ -364,6 +365,7 @@ body::-webkit-scrollbar {
     width: 500px;
     grid-column: 2/4 ;
     grid-row: 1/2;
+
 }
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
@@ -595,6 +597,7 @@ input[type=text]:focus {
 
     #iconos{
         width: 40px;
+        cursor: pointer;
     }
 
     #iconos2{
