@@ -5,13 +5,29 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+var usuario = require('./app_api/schemas/usuarios');
+var series = require('./app_api/schemas/series');
+var peliculas = require('./app_api/schemas/peliculas');
+
+
+//mongoose connection 
+mongoose.connect('mongodb://localhost/mongoose_db', function(err){
+  if(err) throw err;
+  console.log('Sucessfully connected');
+  
+  var 
+});
+
+
 
 //var indexRouter = require('./app_server/routes/index');
 //var usersRouter = require('./app_server/routes/users');
 
 let routesApi = require('./app_api/routes/index');
 let usersApi = require('./app_api/routes/users');
+
+
+
 //instantiations
 var app = express();
 
