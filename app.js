@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost/mongoose_db', function(err){
   if(err) throw err;
   console.log('Sucessfully connected');
   
-  var 
+  
 });
 
 
