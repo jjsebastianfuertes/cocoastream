@@ -46,7 +46,10 @@ module.exports.leonardo = (req, res) => {
 module.exports.perfiladmin = (req, res) => {
   res.render('perfiladmin')
 }
-
+//subir video admin page
+module.exports.subirvideo = (req, res) => {
+  res.render('subirvideo')
+}
 //editor admin page
 module.exports.editoradmin = (req, res) => {
   res.render('editoradmin')
