@@ -20,7 +20,7 @@ mongoose.connect('mongodb://localhost/mongoose_db', { useNewUrlParser: true }, f
 
 
 
-//var indexRouter = require('./app_server/routes/index');
+var indexRouter = require('./app_server/routes/index');
 //var usersRouter = require('./app_server/routes/users');
 
 let routesApi = require('./app_api/routes/index');
@@ -47,10 +47,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
+app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/users', usersApi);
-app.use('/', routesApi)
+//app.use('/', routesApi)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
