@@ -11,7 +11,7 @@ var peliculas = require('./app_api/schemas/peliculas');
 
 
 //mongoose connection 
-mongoose.connect('mongodb://localhost/mongoose_db', function(err){
+mongoose.connect('mongodb://localhost/mongoose_db', { useNewUrlParser: true }, function(err){
   if(err) throw err;
   console.log('Sucessfully connected');
   
