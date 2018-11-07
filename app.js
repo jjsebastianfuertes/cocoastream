@@ -5,18 +5,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-var usuario = require('./app_api/schemas/usuarios');
-var series = require('./app_api/schemas/series');
-var peliculas = require('./app_api/schemas/peliculas');
+//var usuario = require('./app_api/schemas/usuarios');
+//var series = require('./app_api/schemas/series');
+//var peliculas = require('./app_api/schemas/peliculas');
 
 
 //mongoose connection 
-mongoose.connect('mongodb://localhost/mongoose_db', { useNewUrlParser: true }, function(err){
-  if(err) throw err;
-  console.log('Sucessfully connected');
-  
-  
-});
+require('./app_api/models/db');
 
 
 
