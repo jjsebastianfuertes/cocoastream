@@ -10,9 +10,9 @@ mongoose.connection.on('connected',function(){
 mongoose.connection.on('error',function(err){
 	console.log('Mongoose connection error:'+err);
 });
-/*mongoose.connection.on('disconnected',function(){
+mongoose.connection.on('disconnected',function(){
 	console.log('Mongoose disconnected');
-});*/
+});
 
 gracefulShutdown = function(msg,callback){
 	mongoose.connection.close(function(){
@@ -41,4 +41,4 @@ process.on('SIGTERM', function(){
 	});
 });
 
-//require('./locations');
+require('./videos');
