@@ -41,18 +41,19 @@ module.exports.admin = (req, res) => {
 module.exports.leonardo = (req, res) => {
   res.render('leonardo')
 }
-
 //perfil admin page
 module.exports.perfiladmin = (req, res) => {
   res.render('perfiladmin')
 }
-
 //editor admin page
 module.exports.editoradmin = (req, res) => {
   res.render('editoradmin')
 }
-
 //suirvideoadmin page
 module.exports.subirvideoadmin = (req, res) => {
   res.render('subirvideoadmin')
+}
+//crearadmin page
+module.exports.crearadmin = (req, res) => {
+  res.render('crearadmin')
 }
