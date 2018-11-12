@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 let ctrlUser = require('../controllers/usuarios')
 
-/* GET users listing. */
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+
+router.get('/users', ctrlUser.usersList);
+router.post('/users', ctrlUser.usersCreate);
+router.get('/users/:userid', ctrlUser.usersReadOne);
+router.put('/users/:usersid', ctrlUser.userUpdateOne);
+router.delete('users/:usersid', ctrlUser.userDeleteOne);
 
 module.exports = router;
