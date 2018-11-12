@@ -32,7 +32,14 @@ router.get('/leonardo', ctrlMain.leonardo);
 router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 
 //editor admin pages
-router.get('/admin/editoradmin', ctrlMain.editoradmin);
+router.get('/editoradmin', ctrlMain.editoradmin);
+
+//subir video admin pages
+router.get('/subirvideoadmin', ctrlMain.subirvideoadmin);
+
+//crearadmin pages
+router.get('/crearadmin', ctrlMain.crearadmin);
+
 
 
 module.exports = router;
