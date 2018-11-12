@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-//let ctrlUser = require('../controllers/main')
+let ctrlUser = require('../controllers/usuarios')
 
 /* GET users listing. */
 /* GET users listing. */

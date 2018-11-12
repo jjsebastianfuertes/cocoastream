@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var gracefulShutdown;
 var dbURI='mongodb://localhost/cocoastreamdb';
 
-mongoose.connect(dbURI,{useNewUrlParser: true});
+mongoose.connect(dbURI,{useCreateIndex: true, useNewUrlParser: true});
 
 mongoose.connection.on('connected',function(){
 	console.log('Mongoose connected to '+dbURI);
@@ -42,3 +42,4 @@ process.on('SIGTERM', function(){
 });
 
 require('./videos');
+require('../../app_server/models/usuarios');

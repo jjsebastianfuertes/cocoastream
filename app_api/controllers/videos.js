@@ -6,10 +6,23 @@ var sendJsonResponse = function(res, status, content){
 	res.json(content);
 }
 module.exports.videosCreate = function (req, res) {
+
+
+	
 	sendJsonResponse(res, 200,{"status":"success"}); 
 	};
 module.exports.videosList = function (req, res) { 
-	sendJsonResponse(res, 200,{"status":"success"});
+	//sendJsonResponse(res, 200,{"status":"success"});
+	Vid.
+		find({}, function(err, videos){
+			let vids = {};
+
+			videos.forEach(function(video){
+				vids[video._id] = video;
+			});
+		}).exec(function(err, video){
+			sendJsonResponse(res, 200, video);
+		});
 	};
 
 
@@ -23,7 +36,7 @@ module.exports.videosReadOne = function (req, res) {
 	
 	};
 module.exports.videosUpdateOne = function (req, res) { 
-	sendJsonResponse(res, 200,{"status":"success"});
+	//sendJsonResponse(res, 200,{"status":"success"});
 	};
 module.exports.videosDeleteOne = function (req, res) { 
 	sendJsonResponse(res, 200,{"status":"success"});
