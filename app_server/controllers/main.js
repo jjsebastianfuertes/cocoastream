@@ -51,3 +51,8 @@ module.exports.perfiladmin = (req, res) => {
 module.exports.editoradmin = (req, res) => {
   res.render('editoradmin')
 }
+
+//suirvideoadmin page
+module.exports.subirvideoadmin = (req, res) => {
+  res.render('subirvideoadmin')
+}
