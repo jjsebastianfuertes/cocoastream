@@ -9,6 +9,7 @@ const regexPass = /\S+@\S+\.\S+/;
 var userSchema = mongoose.Schema({
    name: {type: String, lowecase: true, unique: true, required: [true, "no se puede dejar vacio"], match: [regexUser, 'no es valido'], index: true},
    email: {type: String, lowecase: true, unique: true, required: [true, "no se puede dejar vacio"], match: [regexPass, 'no es valido'], index: true},
+   categoria: {enum: ['cine', 'tv', 'animacion']},
    hash: String,
    salt: String
 }, {timestamps: true});
