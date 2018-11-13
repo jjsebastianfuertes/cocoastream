@@ -15,6 +15,14 @@ mongoose.connect('mongodb://localhost/mongoose_db', { useNewUrlParser: true }, f
   if(err) throw err;
   console.log('Sucessfully connected');
   
+  usuario.find({
+    
+  })
+  .exec(function(err, usuarios){
+    if(err) throw err;
+
+    console.log(usuarios);
+  })
   
 });
 

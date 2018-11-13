@@ -306,7 +306,7 @@ body::-webkit-scrollbar {
   width: 150px;
 }
 
-#cineIcono, #tvIcono, #animacionIcono {
+#cineIcono, #tvIcono, #animacionIcono, #nosotrosIcono, #contactanosIcono {
   width: 500px;
   grid-column: 2/4;
   grid-row: 1/2;
@@ -528,7 +528,7 @@ input[type=text]:focus {
     width: 80px;
   }
 
-  #cineIcono, #tvIcono, #animacionIcono {
+  #cineIcono, #tvIcono, #animacionIcono, #contactanosIcono, #nosotrosIcono {
     width: 500px;
     grid-column: 2/4;
     grid-row: 1/2;

@@ -10,3 +10,6 @@ var peliculasSchema = mongoose.Schema({
 
     }
 })
+
+var peliculas = mongoose.model('peliculas', peliculasSchema);
+module.exports = peliculas;
