@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI='mongodb://localhost/cocoastreamdb';
+var dbURI= 'mongodb://pepefeliblu:JJ-1721645438@ds155653.mlab.com:55653/cocoastreamdb' //'mongodb://localhost/cocoastreamdb';
 
 if(process.env.NODE_ENV === 'production'){
-	dbURI = "live goes here!!";
+	dbURI = 'mongodb://pepefeliblu:JJ-1721645438@ds155653.mlab.com:55653/cocoastreamdb';
 }
 
 mongoose.connect(dbURI,{useCreateIndex: true, useNewUrlParser: true});
