@@ -1,15 +1,42 @@
 var mongoose = require('mongoose');
 var Vid = mongoose.model('video');
 
-var sendJsonResponse = function(res, status, content){
+var sendJsonResponse = function (res, status, content) {
 	res.status(status);
 	res.json(content);
 }
 module.exports.videosCreate = function (req, res) {
+	//console.log(req.body);
+	//sendJsonResponse(res, 201, req.body );
+	//console.log(JSON.stringify(req.body))
 
+
+	Vid.create({
+		
+		tipo: req.body.tipo,
+		categoria: req.body.categoria,
+		genero: req.body.genero.split(","),
+		nombreSerie: req.body.nombreSerie,
+		nombre: req.body.nombre,
+		thumbnail: req.body.thumbnail,
+		pathUrl: req.body.pathUrl,
+		creditos: {
+			cast: req.body.cast.split(","),
+			creador: req.body.creador,
+			director: req.body.director,
+			productor: req.body.productor
+		} 
+	}, function(err, vid) {
+		if(err){
+			sendJsonResponse(res, 400, err);
+		} else {
+			sendJsonResponse(res, 201, vid);
+		}
+		
+});
 
 	
-	sendJsonResponse(res, 200,{"status":"success"}); 
+	///sendJsonResponse(res, 200,{"status":"success"}); 
 	};
 module.exports.videosList = function (req, res) { 
 	//sendJsonResponse(res, 200,{"status":"success"});
@@ -45,7 +72,7 @@ module.exports.videosDeleteOne = function (req, res) {
 
 	//catching errors
 	module.exports.videosReadOne = function(req, res){
-		if (req.param && req.params.videoid){
+		if (req.params && req.params.videoid){
 			Vid
 				.findById(req.params.videoid)
 				.exec(function(err, video){
