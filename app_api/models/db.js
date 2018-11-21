@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI='mongodb://localhost/cocoastreamdb';
+var dbURI= 'mongodb://localhost/cocoastreamdb';
 
 if(process.env.NODE_ENV === 'production'){
-	dbURI = "live goes here!!";
+	dbURI = process.env.MONGOLAB_URI;
 }
 
 mongoose.connect(dbURI,{useCreateIndex: true, useNewUrlParser: true});
