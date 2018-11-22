@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+  body
+    .container.padder
+      br
+      br
+      .text-center
+        img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream" class="grid-item")
+      .form-inline
+      //.text-md-right
+      br
+      .mx-auto.text-center.form-group
+          p Administradores
+          br
+          form(action="/admin/perfiladmin", method="get")
+            .row
+              .mx-auto.col-12
+                label(for='exampleInputEmail1') Dirección Email
+              .mx-auto
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Ingresa tu email')
+                small#emailHelp.form-text.text-muted Cocoa Stream no compartirá tu Email con nadie más.
+            .row
+              .mx-auto.col-12
+                label(for='exampleInputPassword1') Contraseña
+              .mx-auto
+                input#exampleInputPassword1.form-control(type='password', placeholder='Contraseña')
+            br
+            .row
+              .mx-auto
+                button.btn.btn-primary(type='submit') Entrar
+
+                
