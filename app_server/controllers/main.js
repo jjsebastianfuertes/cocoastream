@@ -2,13 +2,34 @@ var request = require('request')
 
 const apiOptions = {
   server : 'http://localhost:3000'
+};
+
+//si la aplicacion corre en modo de produccion
+//establecer diferente URL base
+//cambiar a la direccion en linea
+if (process.env.NODE_ENV === 'production') {
+  apiOptions.server =  'https://cocoastream.herokuapp.com';
 }
-if (process.env.NODE_ENV)
 
 //home page
+var renderHomePage = function(req, res){
+  res.render('index', {title:'COCOASTREAM'});
+};
 module.exports.inicio =  (req, res) => {
-    res.render('index', { title: 'COCOA STREAM' });
-  }
+    var requestOptions, path;
+    path = '/api/videos';
+    requestOptions = {
+      url : apiOptions.server + path,
+      method: "GET",
+      json: {},
+    };
+    request(
+      requestOptions,
+      function(err, response, body){
+        renderHomePage(req,res);
+      }
+    );
+};
 
 //nosotros page
 module.exports.nosotros = (req, res) => {
