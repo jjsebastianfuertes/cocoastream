@@ -1,3 +1,11 @@
+var request = require('request');
+
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+if(process.env.NODE_ENV === 'production'){
+  apiOptions.server = "https://cocoastream.herokuapp.com";
+}
 //home page
 module.exports.inicio =  (req, res) => {
     res.render('index', { title: 'COCOA STREAM' });
