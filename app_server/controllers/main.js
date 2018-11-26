@@ -1,3 +1,10 @@
+var request = require('request')
+
+const apiOptions = {
+  server : 'http://localhost:3000'
+}
+if (process.env.NODE_ENV)
+
 //home page
 module.exports.inicio =  (req, res) => {
     res.render('index', { title: 'COCOA STREAM' });
