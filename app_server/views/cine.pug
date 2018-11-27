@@ -26,7 +26,8 @@ block content
         |  de películas, tanto cortometrajes
         |  como largometrajes, ya sean estos
         |  documentales o de ficción.  
-
+  if message
+    .error= message
   each video in videos
     .grid-contMult
         a(href="/cine/"+video._id)

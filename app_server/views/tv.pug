@@ -28,6 +28,8 @@ block content
         |  para que se desenvuelvan 
         |  eficientemente en todos los ámbitos
         |  audiovisuales. 
+  if message
+    .error= message
   each video in videos
     .grid-contMult
         a(href="/tv/"+video._id)

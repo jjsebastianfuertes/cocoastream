@@ -25,6 +25,8 @@ block content
         |  mientas digitales, la producción de
         |  cortometrajes animados y la forma
         |  ción profesional integral.  
+  if message
+    .error= message
   each video in videos
     .grid-contMult
         a(href="/animacion/"+video._id)
