@@ -1,3 +1,37 @@
+var request = require('request');
+
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+if(process.env.NODE_ENV === 'production'){
+  apiOptions.server = "https://cocoastream.herokuapp.com";
+}
+
+var renderVideos = function(req, res, resBody){
+  var cineVids = [];
+  var msg;
+  if(!(resBody instanceof Array)){
+    msg = "API lookup error ;(";
+    //resBody = [];
+  } else if(!resBody.length){
+    msg = "No hay pelis todavía ;("
+  } else {
+    resBody.forEach(vid => {
+      if(vid.categoria == "cine"){
+        cineVids.push(vid);
+      }
+    });
+  }
+    
+  
+
+    res.render('cine', {
+    //link: './leonardo',
+    //imageSrc: './img/img7.svg'
+    videos: cineVids,
+    message: msg
+  });
+}
 //home page
 module.exports.inicio =  (req, res) => {
     res.render('index', { title: 'COCOA STREAM' });
@@ -15,7 +49,24 @@ module.exports.contactanos = (req, res) => {
 
 //cine page
 module.exports.cine = (req, res) => {
-  res.render('cine', {title: 'Cine'});
+ var requestOptions, path;
+ path = '/api/videos';
+ requestOptions = {
+  url : apiOptions.server + path,
+  method : "GET",
+  json : {},
+  qs : {
+    categoria : 'cine'
+  }
+ };
+ request(
+   requestOptions, (err, response, body)=>{
+    if(response.statusCode === 200 && body.lenght){
+
+    }
+    renderVideos(req, res, body);
+   }
+ );
 }
 
 //animacion page

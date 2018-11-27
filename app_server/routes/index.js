@@ -27,18 +27,20 @@ router.get('/menu', ctrlMain.menu);
 router.get('/admin', ctrlMain.admin);
 
 //leonardo pages  ... borrar luego de presentacion
-router.get('/leonardo', ctrlMain.leonardo);
+//router.get('/leonardo', ctrlMain.leonardo);
+
+router.get('cine/:cineid', ctrlMain.leonardo);
 //Perfil admin pages
 router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 
 //editor admin pages
-router.get('/editoradmin', ctrlMain.editoradmin);
+router.get('/admin/editoradmin', ctrlMain.editoradmin);
 
 //subir video admin pages
-router.get('/subirvideoadmin', ctrlMain.subirvideoadmin);
+router.get('/admin/subirvideoadmin', ctrlMain.subirvideoadmin);
 
 //crearadmin pages
-router.get('/crearadmin', ctrlMain.crearadmin);
+router.get('/admin/crearadmin', ctrlMain.crearadmin);
 
 
 
