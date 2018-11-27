@@ -18,7 +18,7 @@ var renderVid = function(req, res, resBody){
   res.render('video_show', { title: 'STREAM VID' });
 }
 
-var renderVideos = function(req, res, resBody){
+var renderCine = function(req, res, resBody){
   var cineVids = [];
   var msg;
   //var link;
@@ -31,8 +31,6 @@ var renderVideos = function(req, res, resBody){
     resBody.forEach(vid => {
       if(vid.categoria == 'cine'){
         let tempImg = cloudinary.image(vid.thumbnail);
-        //link = "/cine/"+vid._id;
-       // console.log(vinculo);
         vid.thumbnail = tempImg;
         cineVids.push(vid);
       }
@@ -44,6 +42,59 @@ var renderVideos = function(req, res, resBody){
     message: msg
   });
 }
+
+var renderAnim = function(req, res, resBody){
+  var animVids = [];
+  var msg;
+  //var link;
+  if(!(resBody instanceof Array)){
+    msg = "API lookup error ;(";
+    //resBody = [];
+  } else if(!resBody.length){
+    msg = "No hay animaciones todavía ;("
+  } else {
+    resBody.forEach(vid => {
+      if(vid.categoria == 'animacion'){
+        let tempImg = cloudinary.image(vid.thumbnail);
+        vid.thumbnail = tempImg;
+        animVids.push(vid);
+      }
+    });
+  }
+    res.render('animacion', {
+    videos: animVids,
+    //vinculo: link,
+    message: msg
+  });
+}
+
+
+var renderTv = function(req, res, resBody){
+  var tvVids = [];
+  var msg;
+  //var link;
+  if(!(resBody instanceof Array)){
+    msg = "API lookup error ;(";
+    //resBody = [];
+  } else if(!resBody.length){
+    msg = "No hay series todavía ;("
+  } else {
+    resBody.forEach(vid => {
+      if(vid.categoria == 'tv'){
+        let tempImg = cloudinary.image(vid.thumbnail);
+        vid.thumbnail = tempImg;
+        tvVids.push(vid);
+      }
+    });
+  }
+    res.render('tv', {
+    videos: tvVids,
+    //vinculo: link,
+    message: msg
+  });
+}
+
+
 //home page
 module.exports.inicio =  (req, res) => {
     res.render('index', { title: 'COCOA STREAM' });
@@ -76,7 +127,7 @@ module.exports.cine = (req, res) => {
     if(response.statusCode === 200 && body.lenght){
 
     }
-    renderVideos(req, res, body);
+    renderCine(req, res, body);
    }
  );
 }
@@ -102,12 +153,46 @@ module.exports.videoShow = (req, res) => {
 
 //animacion page
 module.exports.animacion = (req, res) => {
-  res.render('animacion', {title: 'Animación'})
+  var requestOptions, path;
+ path = '/api/videos';
+ requestOptions = {
+  url : apiOptions.server + path,
+  method : "GET",
+  json : {},
+  qs : {
+    categoria : 'animacion'
+  }
+ };
+ request(
+   requestOptions, (err, response, body)=>{
+    if(response.statusCode === 200 && body.lenght){
+
+    }
+    renderAnim(req, res, body);
+   }
+ );
 }
 
 //tv page
 module.exports.tvProduccion = (req, res) => {
-  res.render('tv', {title: 'T.V. Producción'})
+  var requestOptions, path;
+ path = '/api/videos';
+ requestOptions = {
+  url : apiOptions.server + path,
+  method : "GET",
+  json : {},
+  qs : {
+    categoria : 'tv'
+  }
+ };
+ request(
+   requestOptions, (err, response, body)=>{
+    if(response.statusCode === 200 && body.lenght){
+
+    }
+    renderTv(req, res, body);
+   }
+ );
 }
 
 //menu page

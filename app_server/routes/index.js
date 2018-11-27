@@ -30,6 +30,10 @@ router.get('/admin', ctrlMain.admin);
 //router.get('/leonardo', ctrlMain.leonardo);
 
 router.get('/cine/:videoid', ctrlMain.videoShow);
+
+router.get('/animacion/:videoid', ctrlMain.videoShow);
+
+router.get('/tv/:videoid', ctrlMain.videoShow);
 //Perfil admin pages
 router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 
