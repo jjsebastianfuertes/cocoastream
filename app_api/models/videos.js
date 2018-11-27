@@ -25,6 +25,7 @@ var videoSchema = new mongoose.Schema({
     genero: [String],
     nombreSerie: {type: String, default: null},
     temporadaSerie: {type: String, default: null},
+    descripcion: {type: String, required:true},
     creditos: creditoSchema
 
 });

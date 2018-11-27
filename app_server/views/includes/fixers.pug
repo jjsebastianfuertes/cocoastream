@@ -1,0 +1,19 @@
+mixin videoCellFixer(video)
+    - var space = video.size() % 4
+    if(video > 0)
+        if(space == 1)
+            - for(var i = 0; i<3; i++){
+                .grid-contMult
+            - }
+        if(space == 2)
+            - for(var i = 0; i<2; i++){
+                .grid-contMult
+            - }
+        if(space == 3)
+           .grid-contMult
+
+                
+        
+                
+            
+            

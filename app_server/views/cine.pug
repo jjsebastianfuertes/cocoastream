@@ -1,4 +1,5 @@
 extends layout
+include includes/fixers
 
 block content
   .grid-item-logo
@@ -25,23 +26,14 @@ block content
         |  de películas, tanto cortometrajes
         |  como largometrajes, ya sean estos
         |  documentales o de ficción.  
-  .grid-contMult
-      img(src="./img/img.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    img(src="./img/img1.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    img(src="./img/img2.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    img(src="./img/img3.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    img(src="./img/img4.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    img(src="./img/img5.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    img(src="./img/img6.svg" alt="img" style="object-fit:cover;")
-  .grid-contMult
-    a(href="./leonardo")
-      img(src="./img/img7.svg" alt="img" style="object-fit:cover;")    
+
+  each video in videos
+    .grid-contMult
+        a(href=video.thumbnail)
+          img(src=video.pathUrl, alt=video.nombre)
+  //+videoCellFixer(video)
+      
+
   .grid-item
         img(id= "iconoLema" src="./img/cineConNosotros.svg")
   .grid-item

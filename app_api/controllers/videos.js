@@ -18,6 +18,7 @@ module.exports.videosCreate = function (req, res) {
 		nombre: req.body.nombre,
 		thumbnail: req.body.thumbnail,
 		pathUrl: req.body.pathUrl,
+		creditos: req.body.descripcion,
 		creditos: {
 			cast: req.body.cast.split(","),
 			creador: req.body.creador,
@@ -91,6 +92,7 @@ module.exports.videosUpdateOne = function (req, res) {
 				if (req.body.nombre != null) video.nombre = req.body.nombre;
 				if (req.body.thumbnail != null) video.thumbnail = req.body.thumbnail;
 				if (req.body.pathUrl != null) video.pathUrl = req.body.pathUrl;
+				if (req.body.descripcion != null) video.descripcion = req.body.descripcion;
 				if (req.body.cast != null) { var rCast = req.body.cast.split(","); } else var rCast = video.creditos.cast;
 				if (req.body.creador != null) { var rCreador = req.body.creador; } else var rCreador = video.creditos.creador;
 				if (req.body.director != null) { var rDirector = req.body.director; } else var rDirector = video.creditos.director;
