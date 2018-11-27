@@ -4,20 +4,20 @@ include includes/fixers
 block content
   .grid-item-logo
         a(href="./" )
-            img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream") 
+            img(id='cocoasLogo' src="/img/logo.svg" alt="cocoa stream") 
   .grid-item-category
     img(id='iconos2' src="./img/left.svg" alt="izquierda")
     a(href='./' style="width: 120px;") DRAMA
-    img(id='iconos2' src="./img/right.svg" alt="derecha")
+    img(id='iconos2' src="/img/right.svg" alt="derecha")
   .grid-item-filter
-    img(id='iconos' src="./img/up.svg" alt="arriba")
-    a(href='./cine' style="width: 80px;") CINE
-    img(id='iconos' src="./img/down.svg" alt="abajo")
+    img(id='iconos' src="/img/up.svg" alt="arriba")
+    a(href='/cine' style="width: 80px;") CINE
+    img(id='iconos' src="/img/down.svg" alt="abajo")
   .grid-item-menu
         a(href="./menu" )
-            img(id='menuLogo' src="./img/menu.svg" alt="menu")
+            img(id='menuLogo' src="/img/menu.svg" alt="menu")
   .grid-item
-        img(id= "iconoName" src="./img/queHacemos.svg")
+        img(id= "iconoName" src="/img/queHacemos.svg")
   .grid-item-texto
     .textContInfo
       p La carrera de Cine se enfoca en las
@@ -29,13 +29,14 @@ block content
 
   each video in videos
     .grid-contMult
-        a(href=video.thumbnail)
-          img(src=video.pathUrl, alt=video.nombre)
-  //+videoCellFixer(video)
+        a(href="/cine/"+video._id)
+          - var item = video.thumbnail;
+          .miniatura !{item}
+
       
 
   .grid-item
         img(id= "iconoLema" src="./img/cineConNosotros.svg")
   .grid-item
-      img( id='instagramLogo' src="./img/instagram.svg" alt="instagram")
-      img( id='fbLogo' src="./img/facebook.svg" alt="facebook")
+      img( id='instagramLogo' src="/img/instagram.svg" alt="instagram")
+      img( id='fbLogo' src="/img/facebook.svg" alt="facebook")

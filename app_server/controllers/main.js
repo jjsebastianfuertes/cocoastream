@@ -1,4 +1,11 @@
 var request = require('request');
+var cloudinary = require('cloudinary');
+
+cloudinary.config({ 
+  cloud_name: 'cocoastream', 
+  api_key: '374781827885525', 
+  api_secret: 'JX8B3MlwzJ2P2O0rSe4CHJDOxkk' 
+});
 
 var apiOptions = {
   server : "http://localhost:3000"
@@ -7,9 +14,14 @@ if(process.env.NODE_ENV === 'production'){
   apiOptions.server = "https://cocoastream.herokuapp.com";
 }
 
+var renderVid = function(req, res, resBody){
+  res.render('video_show', { title: 'STREAM VID' });
+}
+
 var renderVideos = function(req, res, resBody){
   var cineVids = [];
   var msg;
+  //var link;
   if(!(resBody instanceof Array)){
     msg = "API lookup error ;(";
     //resBody = [];
@@ -17,18 +29,18 @@ var renderVideos = function(req, res, resBody){
     msg = "No hay pelis todavía ;("
   } else {
     resBody.forEach(vid => {
-      if(vid.categoria == "cine"){
+      if(vid.categoria == 'cine'){
+        let tempImg = cloudinary.image(vid.thumbnail);
+        //link = "/cine/"+vid._id;
+       // console.log(vinculo);
+        vid.thumbnail = tempImg;
         cineVids.push(vid);
       }
     });
   }
-    
-  
-
     res.render('cine', {
-    //link: './leonardo',
-    //imageSrc: './img/img7.svg'
     videos: cineVids,
+    //vinculo: link,
     message: msg
   });
 }
@@ -69,6 +81,25 @@ module.exports.cine = (req, res) => {
  );
 }
 
+module.exports.videoShow = (req, res) => {
+  var requestOptions, path;
+  path = '/api/videos/'+req.params.videoid;
+  requestOptions = {
+  url : apiOptions.server + path,
+  method : "GET",
+  json : {},
+  
+ };
+ request(
+  requestOptions, (err, response, body)=>{
+   if(response.statusCode === 200 && body.lenght){
+
+   }
+   renderVid(req, res, body);
+  }
+);
+}
+
 //animacion page
 module.exports.animacion = (req, res) => {
   res.render('animacion', {title: 'Animación'})
@@ -88,10 +119,7 @@ module.exports.menu = (req, res) => {
 module.exports.admin = (req, res) => {
   res.render('admin')
 }
-//leonardo page ... borrar despues de presentacion
-module.exports.leonardo = (req, res) => {
-  res.render('leonardo')
-}
+
 //perfil admin page
 module.exports.perfiladmin = (req, res) => {
   res.render('perfiladmin')

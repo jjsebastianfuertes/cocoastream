@@ -29,7 +29,7 @@ router.get('/admin', ctrlMain.admin);
 //leonardo pages  ... borrar luego de presentacion
 //router.get('/leonardo', ctrlMain.leonardo);
 
-router.get('cine/:cineid', ctrlMain.leonardo);
+router.get('/cine/:videoid', ctrlMain.videoShow);
 //Perfil admin pages
 router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 

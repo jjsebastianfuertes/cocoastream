@@ -2,33 +2,33 @@ extends layout
 
 block content
     .grid-item-logo
-        a(href="./" )
-            img(id='cocoasLogo' src="./img/logo.svg" alt="cocoa stream") 
+        a(href="/" )
+            img(id='cocoasLogo' src="/img/logo.svg" alt="cocoa stream") 
     .grid-item
         p sebas
     .grid-item-menu
-        a(href="./menu" )
-            img(id='menuLogo' src="./img/menu.svg" alt="menu")
+        a(href="/menu" )
+            img(id='menuLogo' src="/img/menu.svg" alt="menu")
     .grid-item-filter(style='grid-column:4/5; grid-row:2;')
-        img(id='iconos' src="./img/up.svg" alt="arriba" onClick='cambiarCat(-1)')
+        img(id='iconos' src="/img/up.svg" alt="arriba" onClick='cambiarCat(-1)')
         .catName
-            a(href='./cine' style="width: 80px;") CINE
+            a(href='/cine' style="width: 80px;") CINE
         .catName
-            a(href="./tv" style="width: 80px") TV 
+            a(href="/tv" style="width: 80px") TV 
         .catName
-            a(href="./animacion" style="width: 80px") ANIM
+            a(href="/animacion" style="width: 80px") ANIM
         .catName
-            a(href="./contactanos" style="width: 80px") CONTACTO
-        img(id='iconos' src="./img/down.svg" alt="abajo" onClick='cambiarCat(1)')
+            a(href="/contactanos" style="width: 80px") CONTACTO
+        img(id='iconos' src="/img/down.svg" alt="abajo" onClick='cambiarCat(1)')
     .grid-item-icono
         .categoria
-            img(id='cineIcono' src="./img/cineIcono.svg" alt="cine")
+            img(id='cineIcono' src="/img/cineIcono.svg" alt="cine")
         .categoria
-            img(id="tvIcono" alt="tv" src="./img/tvIcono.svg")
+            img(id="tvIcono" alt="tv" src="/img/tvIcono.svg")
         .categoria
             img(id="animacionIcono" src="./img/animacionIcono.svg" alt="animacion")
         .categoria
-            img(id="contactanosIcono" src="./img/contactanosIcono.svg" alt="contactanos")
+            img(id="contactanosIcono" src="/img/contactanosIcono.svg" alt="contactanos")
     script
         include ../../public/javascripts/slider.js
     
