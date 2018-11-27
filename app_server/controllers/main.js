@@ -14,8 +14,19 @@ if(process.env.NODE_ENV === 'production'){
   apiOptions.server = "https://cocoastream.herokuapp.com";
 }
 
-var renderVid = function(req, res, resBody){
-  res.render('video_show', { title: 'STREAM VID' });
+var renderVid = function(req, res, vid){
+
+  var reproductor = cloudinary.video(vid.pathUrl, {controls:true});
+  console.log(reproductor);
+  vid.pathUrl = reproductor;
+  res.render('video_show', {
+     title: vid.nombre,
+     pageHeader: {title: vid.nombre},
+     video: vid
+     });
+
+
+
 }
 
 var renderCine = function(req, res, resBody){
@@ -38,7 +49,6 @@ var renderCine = function(req, res, resBody){
   }
     res.render('cine', {
     videos: cineVids,
-    //vinculo: link,
     message: msg
   });
 }
@@ -63,7 +73,6 @@ var renderAnim = function(req, res, resBody){
   }
     res.render('animacion', {
     videos: animVids,
-    //vinculo: link,
     message: msg
   });
 }
@@ -89,7 +98,6 @@ var renderTv = function(req, res, resBody){
   }
     res.render('tv', {
     videos: tvVids,
-    //vinculo: link,
     message: msg
   });
 }
