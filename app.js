@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 //imports
 var createError = require('http-errors');
 var express = require('express');
@@ -5,14 +7,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-//var usuario = require('./app_api/schemas/usuarios');
-//var series = 
-//var peliculas = require('./app_api/schemas/peliculas');
+var passport = require('passport');
 
 
 //mongoose connection 
 require('./app_api/models/db');
-
+require('./app_server/config/passport');
 
 
 var indexRouter = require('./app_server/routes/index');
@@ -42,8 +42,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(passport.initialize());
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/', usersRouter);
 app.use('/api', routesApi);
 //app.use('/', routesApi)
 // catch 404 and forward to error handler

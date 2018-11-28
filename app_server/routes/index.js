@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrlMain = require('../controllers/main');
-
+const ctrlAuth = require('../controllers/auth');
 /* GET home page. */
 router.get('/', ctrlMain.inicio);
 
@@ -46,6 +46,8 @@ router.get('/admin/subirvideoadmin', ctrlMain.subirvideoadmin);
 //crearadmin pages
 router.get('/admin/crearadmin', ctrlMain.crearadmin);
 
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
 
 
 module.exports = router;
