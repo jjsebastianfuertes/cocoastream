@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const ctrlMain = require('../controllers/main');
 const ctrlAuth = require('../controllers/auth');
+
+
 /* GET home page. */
 router.get('/', ctrlMain.inicio);
 

@@ -2,13 +2,13 @@ var express = require ('express');
 var router = express.Router();
 var ctrlVideos = require('../controllers/videos.js');
 //var ctrlCreditos = require('../controllers/creditos.js');
-
+var validate = require('../../app_server/routes/auth')
 //videos
 router.get('/videos', ctrlVideos.videosList);
-router.post('/videos',ctrlVideos.videosCreate);
+router.post('/videos', validate.required ,ctrlVideos.videosCreate);
 router.get('/videos/:videoid',ctrlVideos.videosReadOne);
-router.put('/videos/:videoid',ctrlVideos.videosUpdateOne);
-router.delete('/videos/:videoid', ctrlVideos.videosDeleteOne);
+router.put('/videos/:videoid', validate.required, ctrlVideos.videosUpdateOne);
+router.delete('/videos/:videoid', validate.required, ctrlVideos.videosDeleteOne);
 
 //creditos
 /*
