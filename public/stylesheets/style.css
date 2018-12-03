@@ -98,7 +98,7 @@ of the project
 .catName{
   width: 200px;
 }
-.grid-item-relleno, .grid-item-texto, .grid-item-texto-pc .grid-item-creditos, .grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-filter, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-icono, .grid-item-search, .grid-item-menu, .grid-item-nombreVideo, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
+.grid-item-texto-secciones, .grid-item-filter-secciones, .grid-item-relleno, .grid-item-texto, .grid-item-texto-contactanos-pc-animacion,.grid-item-texto-contactanos-pc-tv,  .grid-item-texto-contactanos-pc, .grid-item-creditos, .grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-filter, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-icono, .grid-item-search, .grid-item-menu, .grid-item-nombreVideo, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
   display: flex;
   background-color: black;
   color: white;
@@ -195,7 +195,20 @@ div.grid-contMult > a > div.miniatura > img{
 .grid-item-contactos-mobile {
   display: none;
 }
+.grid-item-texto-contactanos-pc{
+  grid-column: 3/4;
+  grid-row: 2;
+}
 
+.grid-item-texto-contactanos-pc-animacion{
+  grid-column: 3/4;
+  grid-row: 3;
+}
+
+.grid-item-texto-contactanos-pc-tv{
+  grid-column: 3/4;
+  grid-row: 4;
+}
 .textContCarr {
   font-size: 20px;
   font-family: bodoni;
@@ -203,6 +216,11 @@ div.grid-contMult > a > div.miniatura > img{
 
 .grid-item-texto {
   display: none;
+}
+
+.grid-item-texto-secciones{
+  grid-column: 2/3;
+  grid-row: 2;
 }
 
 .textContInfo {
@@ -213,7 +231,7 @@ div.grid-contMult > a > div.miniatura > img{
   font-family: futura;
 }
 
-.grid-item-button {
+.grid-item-button, .grid-item-button-contactanos-animacion, .grid-item-button-contactanos-tv {
   background-color: black;
   display: grid;
   align-items: center;
@@ -221,7 +239,17 @@ div.grid-contMult > a > div.miniatura > img{
 }
 
 .grid-item-button{
+  grid-column: 4/5;
+  grid-row: 2;
+}
 
+.grid-item-button-contactanos-animacion{
+  grid-column: 4/5;
+  grid-row: 3;
+}
+.grid-item-button-contactanos-tv{
+  grid-column: 4/5;
+  grid-row: 4;
 }
 
 .button {
@@ -273,6 +301,11 @@ div.grid-contMult > a > div.miniatura > img{
   grid-row: 2;
 }
 
+.grid-item-filter-secciones, a {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+
 .grid-item-menu, a {
   grid-column: 4/5;
   grid-row: 1;
@@ -311,6 +344,11 @@ div.grid-contMult > a > div.miniatura > img{
 }
 
 .grid-item-contactanos, a {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+
+.grid-item-contactanos-contactanos, a {
   grid-column: 3/4;
   grid-row: 1;
 }
@@ -508,16 +546,25 @@ input[type=text]:focus {
     font-family: futura;
   }
 
-  .grid-item-button {
+  .grid-item-button, .grid-item-button-contactanos-animacion, .grid-item-button-contactanos-tv {
     background-color: black;
     display: grid;
     align-items: center;
     justify-content: center;
   }
-
+  
   .grid-item-button{
- grid-column: 1/2;
- grid-row: 4;
+    grid-column: 1/2;
+    grid-row: 4;
+  }
+  
+  .grid-item-button-contactanos-animacion{
+    grid-column: 1/2;
+    grid-row: 6;
+  }
+  .grid-item-button-contactanos-tv{
+    grid-column: 1/2;
+    grid-row: 8;
   }
   
 
@@ -532,10 +579,15 @@ input[type=text]:focus {
     width: 80px;
     height: 20px;
   }
-  .grid-item-texto-pc{
+  .grid-item-texto-contactanos-pc{
     display: none;
   }
-
+  .grid-item-texto-contactanos-pc-animacion{
+    display: none;
+  }
+  .grid-item-texto-contactanos-pc-tv{
+    display: none;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -576,6 +628,12 @@ input[type=text]:focus {
 
   }
 
+  .grid-item-filter-secciones, a {
+    grid-column: 2/3;
+    grid-row: 2;
+
+  }
+
   .grid-item-menu, a {
     grid-column: 2/3;
     grid-row: 1;
@@ -606,6 +664,11 @@ input[type=text]:focus {
     grid-row: 3;
   }
 
+  .grid-item-contactanos-contactanos, a {
+    grid-column: 2/3;
+    grid-row: 2;
+  }
+
   .grid-item-x, a {
     grid-column: 2/3;
     grid-row: 1;
@@ -620,7 +683,10 @@ input[type=text]:focus {
     grid-column: 1/2;
     grid-row: 4;
   }
-
+  .grid-item-texto-secciones{
+    grid-column: 2/3;
+    grid-row: 3;
+  }
   .grid-item-textNosotros {
     grid-column: 1/3;
     grid-row: 3;
