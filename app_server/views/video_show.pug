@@ -7,20 +7,19 @@ block content
     .grid-item-back
         a(href="/menu" )
             img(id='backLogo' src="/img/back.svg" alt="retornar")
-    .grid-item-filter
-        a(href="/nosotros")= video.nombre
+    .grid-item-nombreVideo
+        p= video.nombre
     .grid-item-menu
         a(href="/menu" )
           img(id='menuLogo' src="/img/menu.svg" alt="menu")
     .grid-video !{video.pathUrl}
     //-.grid-play
         img( src="/img/play.svg" alt="play")
-    .grid-item
-    .grid-item
+    .grid-item-relleno
     .grid-item-textVideo
-        p(class='grid-item-video-p')= +video.descripcion
-    .grid-item
-    .grid-item
+        p(class='grid-item-video-p')= video.descripcion
+    .grid-item-relleno
+    .grid-item-creditos
         img(id= "iconoName" src="/img/creditos.svg" alt="creditos")
     .grid-item-texto
         p= 'Director '+video.creditos.director

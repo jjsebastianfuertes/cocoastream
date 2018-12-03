@@ -98,7 +98,7 @@ of the project
 .catName{
   width: 200px;
 }
-.grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-icono, .grid-item-search, .grid-item-menu, .grid-item-filter, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
+.grid-item-relleno, .grid-item-texto, .grid-item-texto-pc .grid-item-creditos, .grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-filter, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-icono, .grid-item-search, .grid-item-menu, .grid-item-nombreVideo, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
   display: flex;
   background-color: black;
   color: white;
@@ -106,10 +106,11 @@ of the project
   justify-content: center;
   font-family: futura;
   font-size: 18pt;
-  color: white;
   text-decoration: none;
 }
-
+.grid-item-nombreVideo > p {
+  height: auto;
+}
 * {
   height: 100%;
   margin: 0;
@@ -138,6 +139,14 @@ of the project
   overflow: hidden;
   grid-column: 1/5;
   grid-row: 2/4;
+}
+
+
+.grid-item-creditos {
+  justify-self: stretch;
+  overflow: hidden;
+  grid-column: 1/2;
+  grid-row: 5;
 }
 
 body::-webkit-scrollbar {
@@ -193,11 +202,7 @@ div.grid-contMult > a > div.miniatura > img{
 }
 
 .grid-item-texto {
-  display: flex;
-  background-color: black;
-  color: white;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
 
 .textContInfo {
@@ -213,6 +218,10 @@ div.grid-contMult > a > div.miniatura > img{
   display: grid;
   align-items: center;
   justify-content: center;
+}
+
+.grid-item-button{
+
 }
 
 .button {
@@ -292,7 +301,7 @@ div.grid-contMult > a > div.miniatura > img{
 
    */
 .grid-item-nosotros, a {
-  grid-column: 2/3;
+  grid-column: 3/4;
   grid-row: 1;
 }
 
@@ -330,6 +339,7 @@ div.grid-contMult > a > div.miniatura > img{
 }
 
 .grid-item-nosotros-p {
+  height: auto;
   position: absolute;
   top: 60px;
 }
@@ -435,6 +445,7 @@ input[type=text]:focus {
   }
   .catName{
     width: 80px;
+    height: auto;
   }
   .grid-item-contactos-pc {
     display: none;
@@ -443,6 +454,10 @@ input[type=text]:focus {
   .textContCarr {
     font-size: 12px;
     font-family: bodoni;
+  }
+
+  .grid-item-nombreVideo{
+    font-size: 16px;
   }
 
   .grid-item-contactos-mobile > .textContMobInfo {
@@ -461,6 +476,25 @@ input[type=text]:focus {
     left: 30px;
   }
 
+  .grid-video {
+    justify-self: stretch;
+    overflow: hidden;
+    grid-column: 1/3;
+    grid-row: 3/5;
+  }
+
+  .grid-item-creditos {
+    justify-self: stretch;
+    overflow: hidden;
+    grid-column: 1/2;
+    grid-row: 6;
+  }
+
+  
+  .grid-item-relleno{
+    display: none;
+  }
+
   .textContInfo {
     font-size: 8px;
     width: 140px;
@@ -476,6 +510,12 @@ input[type=text]:focus {
     justify-content: center;
   }
 
+  .grid-item-button{
+ grid-column: 1/2;
+ grid-row: 4;
+  }
+  
+
   .button {
     display: flex;
     background-color: #FAAB22;
@@ -487,6 +527,9 @@ input[type=text]:focus {
     width: 80px;
     height: 20px;
   }
+  .grid-item-texto-pc{
+    display: none;
+  }
 
   .grid-container {
     display: grid;
@@ -494,11 +537,16 @@ input[type=text]:focus {
     grid-gap: 1px;
     grid-auto-rows: 25%;
   }
-
-  .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-return, .grid-item-share, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-icono, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros, .grid-item-textVideo {
+ .grid-item-creditos, .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-return, .grid-item-share, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-icono, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros, .grid-item-textVideo {
     font-size: 12px;
     
   }
+
+  .grid-item-logo, a {
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+
   .grid-item-icono {
     background-color: black;
     justify-content: center;
@@ -540,12 +588,12 @@ input[type=text]:focus {
 
   .grid-item-return, a {
     grid-column: 1/2;
-    grid-row: 6;
+    grid-row: 7;
   }
 
   .grid-item-share, a {
     grid-column: 2/3;
-    grid-row: 6;
+    grid-row: 7;
   }
 
   .grid-item-contactanos, a {
@@ -632,7 +680,9 @@ input[type=text]:focus {
     width: 30px;
     cursor: pointer;
   }
-
+.grid-item-texto{
+  display: flex;
+}
   #iconos2 {
     width: 15px;
   }
