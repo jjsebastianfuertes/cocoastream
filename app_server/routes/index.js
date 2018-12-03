@@ -3,6 +3,15 @@ const router = express.Router();
 const ctrlMain = require('../controllers/main');
 const ctrlAuth = require('../controllers/auth');
 
+var multer = require('multer');
+
+const parser = multer();
+
+var conf = parser.fields([
+    {name: 'fotoItem', maxCount: 1}, 
+    {name: 'videoItem', maxCount: 1}, 
+  ]);
+
 
 /* GET home page. */
 router.get('/', ctrlMain.inicio);
@@ -43,7 +52,8 @@ router.get('/admin/perfiladmin', ctrlMain.perfiladmin);
 router.get('/admin/editoradmin', ctrlMain.editoradmin);
 
 //subir video admin pages
-router.get('/admin/subirvideoadmin', ctrlMain.subirvideoadmin);
+//router.get('/admin/subirvideoadmin', ctrlMain.subirvideoadmin);
+router.post('/admin/editoradmin',conf, ctrlMain.subirvid);
 
 //crearadmin pages
 router.get('/admin/crearadmin', ctrlMain.crearadmin);

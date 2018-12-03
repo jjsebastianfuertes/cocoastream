@@ -5,10 +5,10 @@ var ctrlVideos = require('../controllers/videos.js');
 var validate = require('../../app_server/routes/auth')
 //videos
 router.get('/videos', ctrlVideos.videosList);
-router.post('/videos', validate.required ,ctrlVideos.videosCreate);
+router.post('/videos', /*validate.required ,*/ctrlVideos.videosCreate);
 router.get('/videos/:videoid',ctrlVideos.videosReadOne);
-router.put('/videos/:videoid', validate.required, ctrlVideos.videosUpdateOne);
-router.delete('/videos/:videoid', validate.required, ctrlVideos.videosDeleteOne);
+router.put('/videos/:videoid', /*validate.required,*/ ctrlVideos.videosUpdateOne);
+router.delete('/videos/:videoid',/* validate.required,*/ ctrlVideos.videosDeleteOne);
 
 //creditos
 /*
