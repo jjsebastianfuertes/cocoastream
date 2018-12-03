@@ -1,3 +1,84 @@
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+
+
+
+
+
+
+
+
+
+#myBtn{
+  background: black;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
 /*
 This document should be used to modificate the style
 of the project
@@ -9,6 +90,13 @@ of the project
 @font-face {
   font-family: "bodoni";
   src: url(../fonts/BodoniMT.ttf);
+}
+.categoria{
+  width: 500px;
+  height: auto;
+}
+.catName{
+  width: 200px;
 }
 .grid-item-textVideo, .grid-item-textNosotros, .grid-item-tv, .grid-item-anim, .grid-item-cine, .grid-item-x, .grid-item-contactanos, .grid-item-nosotros, .grid-item-icono, .grid-item-search, .grid-item-menu, .grid-item-filter, .grid-item-share, .grid-item-return, .grid-item-category, .grid-item-back, .grid-item-logo, a {
   display: flex;
@@ -47,6 +135,7 @@ of the project
 
 .grid-video {
   justify-self: stretch;
+  overflow: hidden;
   grid-column: 1/5;
   grid-row: 2/4;
 }
@@ -60,13 +149,26 @@ body::-webkit-scrollbar {
   background-color: black;
   color: white;
   align-items: center;
+  overflow: hidden;
   justify-content: center;
 }
 
-.grid-contMult {
+div.grid-container > div.grid-contMult, a{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.grid-contMult, a {
+  float: left;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   background-color: black;
   color: white;
-  justify-self: stretch;
+}
+
+div.grid-contMult > a > div.miniatura > img{
+  object-fit: fill;
 }
 
 .textContCoor {
@@ -158,8 +260,8 @@ body::-webkit-scrollbar {
 }
 
 .grid-item-filter, a {
-  grid-column: 3/4;
-  grid-row: 1;
+  grid-column: 4/5;
+  grid-row: 2;
 }
 
 .grid-item-menu, a {
@@ -290,7 +392,8 @@ body::-webkit-scrollbar {
 }
 
 #iconos {
-  width: 60px;
+  width: 50px;
+  height: auto;
   cursor: pointer;
 }
 
@@ -306,10 +409,9 @@ body::-webkit-scrollbar {
   width: 150px;
 }
 
-#cineIcono, #tvIcono, #animacionIcono {
+#cineIcono, #tvIcono, #animacionIcono, #contactanosIcono, #nosotrosIcono{
   width: 500px;
-  grid-column: 2/4;
-  grid-row: 1/2;
+  height: auto;
 }
 
 /* When the input field gets focus, change its width to 100% */
@@ -327,7 +429,13 @@ input[type=text]:focus {
     align-items: center;
     justify-content: center;
   }
-
+  .categoria{
+    width: 100px;
+    height: auto;
+  }
+  .catName{
+    width: 80px;
+  }
   .grid-item-contactos-pc {
     display: none;
   }
@@ -389,8 +497,16 @@ input[type=text]:focus {
 
   .grid-item-logo, a, .grid-item-back, .grid-item-category, .grid-item-return, .grid-item-share, .grid-item-filter, .grid-item-menu, .grid-item-search, .grid-item-icono, .grid-item-nosotros, .grid-item-contactanos, .grid-item-x, .grid-item-cine, .grid-item-anim, .grid-item-tv, .grid-item-textNosotros, .grid-item-textVideo {
     font-size: 12px;
+    
   }
-
+  .grid-item-icono {
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+    grid-column: 1/3;
+    grid-row: 2/4;
+  }
+  
   .grid-item-back, a {
     grid-column: 1/2;
     grid-row: 2;
@@ -403,7 +519,8 @@ input[type=text]:focus {
 
   .grid-item-filter, a {
     grid-column: 2/3;
-    grid-row: 2;
+    grid-row: 4;
+
   }
 
   .grid-item-menu, a {
@@ -512,7 +629,7 @@ input[type=text]:focus {
   }
 
   #iconos {
-    width: 40px;
+    width: 30px;
     cursor: pointer;
   }
 
@@ -528,8 +645,9 @@ input[type=text]:focus {
     width: 80px;
   }
 
-  #cineIcono, #tvIcono, #animacionIcono {
-    width: 500px;
+  #cineIcono, #tvIcono, #animacionIcono, #animacionIcono, #contactanosIcono, #nosotrosIcono {
+    width: 100px;
+    height: auto;
     grid-column: 2/4;
     grid-row: 1/2;
   }

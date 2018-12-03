@@ -25,8 +25,6 @@ var renderVid = function(req, res, vid){
      video: vid
      });
 
-
-
 }
 
 var renderCine = function(req, res, resBody){
@@ -102,7 +100,14 @@ var renderTv = function(req, res, resBody){
   });
 }
 
+/*
+module.exports.inicio = function(req,res){
+  renderHomepage(req,res);
+};
 
+var renderHomepage = function(req,res){
+  res.render('inicio', {title: 'COCOA STREAM'});
+}*/
 //home page
 module.exports.inicio =  (req, res) => {
     res.render('index', { title: 'COCOA STREAM' });
