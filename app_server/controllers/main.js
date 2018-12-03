@@ -1,11 +1,31 @@
 var request = require('request');
 var cloudinary = require('cloudinary');
 
+
 cloudinary.config({ 
   cloud_name: 'cocoastream', 
   api_key: '374781827885525', 
   api_secret: 'JX8B3MlwzJ2P2O0rSe4CHJDOxkk' 
 });
+
+var _showError = function (req, res, status){
+  var title, content;
+
+  if(status === 404){
+    console.log("ejecuto el 404");
+    title = "404, page not found";
+    content = "Parece que están rodando este corto todavía";
+  } else {
+    title = status + ", se trabó el film 😥";
+    content = "Vuelva más tarde..."
+  }
+  res.status(status);
+  res.render('generic-text', {
+    title: title,
+    content: content
+  });
+}
+
 
 var apiOptions = {
   server : "http://localhost:3000"
@@ -14,16 +34,21 @@ if(process.env.NODE_ENV === 'production'){
   apiOptions.server = "https://cocoastream.herokuapp.com";
 }
 
+
+
+
 var renderVid = function(req, res, vid){
 
   var reproductor = cloudinary.video(vid.pathUrl, {controls:true});
-  console.log(reproductor);
+  
   vid.pathUrl = reproductor;
   res.render('video_show', {
      title: vid.nombre,
      pageHeader: {title: vid.nombre},
      video: vid
      });
+     
+
 
 }
 
@@ -33,7 +58,6 @@ var renderCine = function(req, res, resBody){
   //var link;
   if(!(resBody instanceof Array)){
     msg = "API lookup error ;(";
-    //resBody = [];
   } else if(!resBody.length){
     msg = "No hay pelis todavía ;("
   } else {
@@ -46,6 +70,7 @@ var renderCine = function(req, res, resBody){
     });
   }
     res.render('cine', {
+    title: "CINE 📽️",
     videos: cineVids,
     message: msg
   });
@@ -54,10 +79,8 @@ var renderCine = function(req, res, resBody){
 var renderAnim = function(req, res, resBody){
   var animVids = [];
   var msg;
-  //var link;
   if(!(resBody instanceof Array)){
     msg = "API lookup error ;(";
-    //resBody = [];
   } else if(!resBody.length){
     msg = "No hay animaciones todavía ;("
   } else {
@@ -70,6 +93,7 @@ var renderAnim = function(req, res, resBody){
     });
   }
     res.render('animacion', {
+    title: "ANIMACION 🖊️",
     videos: animVids,
     message: msg
   });
@@ -82,7 +106,6 @@ var renderTv = function(req, res, resBody){
   //var link;
   if(!(resBody instanceof Array)){
     msg = "API lookup error ;(";
-    //resBody = [];
   } else if(!resBody.length){
     msg = "No hay series todavía ;("
   } else {
@@ -95,6 +118,7 @@ var renderTv = function(req, res, resBody){
     });
   }
     res.render('tv', {
+    title: "T.V 📺",
     videos: tvVids,
     message: msg
   });
@@ -137,10 +161,12 @@ module.exports.cine = (req, res) => {
  };
  request(
    requestOptions, (err, response, body)=>{
-    if(response.statusCode === 200 && body.lenght){
-
+    if(response.statusCode === 200 ){
+      renderCine(req, res, body);
+    } else {
+      _showError(req, res, response.statusCode);
     }
-    renderCine(req, res, body);
+    
    }
  );
 }
@@ -156,10 +182,13 @@ module.exports.videoShow = (req, res) => {
  };
  request(
   requestOptions, (err, response, body)=>{
-   if(response.statusCode === 200 && body.lenght){
-
-   }
-   renderVid(req, res, body);
+   if(response.statusCode === 200 ){
+     
+    renderVid(req, res, body);
+   } else {
+    _showError(req, res, response.statusCode);
+  }
+   
   }
 );
 }
@@ -178,10 +207,12 @@ module.exports.animacion = (req, res) => {
  };
  request(
    requestOptions, (err, response, body)=>{
-    if(response.statusCode === 200 && body.lenght){
-
+    if(response.statusCode === 200 ){
+      renderAnim(req, res, body);
+    } else {
+      _showError(req, res, response.statusCode);
     }
-    renderAnim(req, res, body);
+    
    }
  );
 }
@@ -200,10 +231,12 @@ module.exports.tvProduccion = (req, res) => {
  };
  request(
    requestOptions, (err, response, body)=>{
-    if(response.statusCode === 200 && body.lenght){
-
+    if(response.statusCode === 200 ){
+      renderTv(req, res, body);
+    } else {
+      _showError(req, res, response.statusCode);
     }
-    renderTv(req, res, body);
+    
    }
  );
 }
@@ -224,7 +257,57 @@ module.exports.perfiladmin = (req, res) => {
 }
 //editor admin page
 module.exports.editoradmin = (req, res) => {
-  res.render('editoradmin')
+  res.render('editoradmin');
+}
+
+module.exports.subirvid = (req, res) => {
+  
+  console.log(req.files);
+  var requestOptions, path, postdata, vid, foto, newVidName, newFotoname;
+  foto = req.body.fotoItem;
+  vid = req.body.videoItem;
+ 
+  newFotoname = "cine/thumbnails"+req.body.titulo
+  newVidName = "cine/videos"+req.body.titulo;
+  cloudinary.v2.uploader.upload(foto, {public_id: newFotoname},
+    function(err, res) {console.log(res, err)});
+  cloudinary.v2.uploader.upload(vid, {resource_type: "video" ,public_id: newVidName},
+  function(err, res) {console.log(res, err)});
+  path = "/api/videos";
+  postdata = {
+    nombre: req.body.titulo,
+    tipo: "peli",
+    categoria: "cine",
+    thumbnail:newFotoname,
+    pathUrl: newVidName,
+    genero: req.body.genero,
+    director: req.body.director,
+    productor: req.body.productor,
+    cast: req.body.elenco
+  };
+  
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "POST",
+    json: postdata
+  };
+
+  if(!postdata.nombre || !postdata.thumbnail || !postdata.pathUrl){
+    res.redirect('/admin/perfiladmin/?err=val');
+  } else {
+    request(
+      requestOptions,
+      function(err, response, body){
+        if(response.statusCode === 201){
+          res.redirect('/admin/perfiladmin');
+        } else if(response.statusCode === 400 && body.name && body.name === "ValidationError" ){
+          res.redirect('/admin/perfiladmin/?err=val');
+        } else {
+          _showError(req, res, response.statusCode );
+        }
+      }
+    );
+  }
 }
 //suirvideoadmin page
 module.exports.subirvideoadmin = (req, res) => {

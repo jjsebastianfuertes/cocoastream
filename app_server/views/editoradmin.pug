@@ -16,43 +16,38 @@ html
       .text-right.botones-perfil
         //<button type="button" class="btn btn-primary">Subir Video</button>
         <button type="button" class="btn btn-secondary">Volver</button>
-      .text-center
+      form.form-horizontal(action="", method='post', role="form")
         p Editar Video
-        <button type="button" class="btn btn-primary">Reupload</button>
-        <button type="button" class="btn btn-secondary">Guardar</button>
+        button.btn.btn-secondary Guardar
         br
-      .container
-        .row
-          .col-md-6
-            br
-            br
-            img(id='cocoasLogo' src="/img/playeditor.png" alt="cocoa stream" class="btn btn-outline-secondary")
-          .col-md-6 
-            .text-center
+        .container
+          .row
+            .col-md-6
               br
               br
-              //<label class="col-form-label" for="inputDefault">Director</label>
-              <input type="text" class="form-control" class="centro" placeholder="Director" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Fotografía</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Fotografía" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Cast</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Cast" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Maquillaje</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Maquillaje" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Género</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Género" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Año</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Año" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Otros</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Otros" id="inputDefault">
-              //<label class="col-form-label" for="inputDefault">Director</label>
-              br
-              <input type="text" class="form-control" class="centro" placeholder="Director" id="inputDefault">
-            
-            
+              img(id='vid-preview' src="/img/playeditor.png" alt="cocoa stream" class="btn btn-outline-secondary")
+            .col-md-6 
+                br
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Título" name="titulo">
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Género" name="genero">
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Descripción" name="descripcion">
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Creador" name="creador">
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Director" name="director">
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Producto " name="productor">
+                br
+                <input type="text" class="form-control" class="centro" placeholder="Elenco" name="elenco">
+                br
+                label.btn.btn-primary.file-upload-container(for='video-upload')
+                  input#video-upload(type='file', style='display:none;' name='videoItem')
+                  |  Subir Video
+                label.btn.btn-secondary.file-upload-container(for='foto-upload')
+                  input#foto-upload(type='file', style='display:none;' name='fotoItem')
+                  |  Subir Preview
+      //script
+        include ../../public/javascripts/uploader.js

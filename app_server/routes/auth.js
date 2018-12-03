@@ -5,7 +5,7 @@ function getTokenFromHeader(req){
         return req.headers.authorization.split(' ')[1];
     }
 
-    return null;
+    return null; 
 }
 
 
@@ -22,5 +22,6 @@ var auth = {
         getToken: getTokenFromHeader
     })
 };
+
 
 module.exports = auth;
