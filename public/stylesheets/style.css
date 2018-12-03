@@ -300,9 +300,14 @@ div.grid-contMult > a > div.miniatura > img{
     }
 
    */
-.grid-item-nosotros, a {
+.grid-item-nosotrosPage, a {
   grid-column: 3/4;
   grid-row: 1;
+}
+
+.grid-item-nosotros, a {
+  grid-column: 2/3;
+  grid-row: 2;
 }
 
 .grid-item-contactanos, a {
@@ -581,7 +586,7 @@ input[type=text]:focus {
     grid-row: 4;
   }
 
-  .grid-item-nosotros, a {
+  .grid-item-nosotrosPage, a {
     grid-column: 2/3;
     grid-row: 2;
   }
