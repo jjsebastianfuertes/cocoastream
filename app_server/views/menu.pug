@@ -9,9 +9,8 @@ block content
     .grid-item-contactanos
       a(class='textMenu' href="/contactanos") CONTACTANOS
     .grid-item-x
-      div('(onclick)'='menuPop')
-        a(href="../")
-          img(id='xLogo' src="/img/x.svg" alt="cerrar")
+      button(id='xLogo' onclick="goBack()")
+        img(id='xLogo' src="/img/x.svg" alt="cerrar")
     .grid-item-cine
       a(href='/cine') CINE
     .grid-item
@@ -20,6 +19,8 @@ block content
       a(href="/tv") T.V. PRODUCCIÓN
     .grid-item-search
       img.image(id='searchLogo' src="/img/search.svg" alt="buscar" )
+    script
+        include ../../public/javascripts/backButton.js
 //-div(class='popup', onclick='menuPop()')
     | sebas
     span(class='popuptext', id='myPopup')

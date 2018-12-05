@@ -8,7 +8,7 @@ block content
         a(href="/menu" )
           img(id='menuLogo' src="/img/menu.svg" alt="menu")
     .grid-item-back
-        a(href="./menu" )
+        button(id='backLogo' onclick="goBack()")
           img(id='backLogo' src="/img/back.svg" alt="retornar")
     .grid-item-contactanos-contactanos
         a(href="/contactanos") CONTACTANOS 
@@ -100,3 +100,6 @@ block content
       input(type="button" onclick="window.location.href='http://www.usfq.edu.ec/programas_academicos/colegios/cocoa/carreras/Documents/mallas_vigentes/malla_produccion_para_medios_de_comunicacion_it_produccion_de_television_y_medios_digitales.pdf'" class='button' value='Malla Academica')
       input(type="button" onclick="window.location.href='http://www.usfq.edu.ec/programas_academicos/colegios/cocoa/carreras/Paginas/produccion_para_medios_de_comunicacion_vigente.aspx'" class='button' value='Más Información')
     .grid-item-contactos-mobile
+
+    script
+        include ../../public/javascripts/backButton.js

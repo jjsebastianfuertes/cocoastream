@@ -8,7 +8,7 @@ block content
         a(href="/menu" )
           img(id='menuLogo' src="/img/menu.svg" alt="menu")
     .grid-item-back
-        a(href="/menu" )
+        button(id='backLogo' onclick="goBack()")
           img(id='backLogo' src="/img/back.svg" alt="retornar")
     .grid-item-nosotrosPage
         a(href="/nosotros") NOSOTROS 
@@ -20,3 +20,6 @@ block content
             |   y arte contemporáneo.
     .grid-item
     .grid-item
+
+    script
+        include ../../public/javascripts/backButton.js

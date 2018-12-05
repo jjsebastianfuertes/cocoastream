@@ -415,6 +415,9 @@ div.grid-contMult > a > div.miniatura > img{
 
 #xLogo {
   width: 40px;
+  background: black;
+  border: none;
+  cursor: pointer;
 }
 
 #menuLogo {
@@ -425,6 +428,9 @@ div.grid-contMult > a > div.miniatura > img{
 #backLogo {
   width: 50px;
   height: 36px;
+  background: black;
+  border: none;
+  cursor: pointer;
 }
 
 #instagramLogo {
@@ -723,6 +729,9 @@ input[type=text]:focus {
 
   #xLogo {
     width: 30px;
+    background: black;
+    border: none;
+    cursor: pointer;
   }
 
   #searchLogo {
@@ -737,6 +746,9 @@ input[type=text]:focus {
   #backLogo {
     width: 30px;
     height: 19px;
+    background: black;
+    border: none;
+    cursor: pointer;
   }
 
   #rightLogo {
@@ -749,6 +761,7 @@ input[type=text]:focus {
 
   #iconos {
     width: 30px;
+    cursor: pointer;
     cursor: pointer;
   }
 .grid-item-texto{
